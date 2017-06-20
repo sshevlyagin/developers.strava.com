@@ -2,7 +2,7 @@
   "SegmentEffort": {
     "allOf": [
       {
-        "$ref": "./definitions/segment_effort.json#/SummarySegmentEffort"
+        "$ref": "segment_effort.json#/SummarySegmentEffort"
       },
       {
         "properties": {
@@ -11,10 +11,10 @@
             "description": "The name of the segment on which this effort was performed"
           },
           "activity": {
-            "$ref": "./definitions/activity.json#/MetaActivity"
+            "$ref": "activity.json#/MetaActivity"
           },
           "athlete": {
-            "$ref": "./definitions/athlete.json#/MetaAthlete"
+            "$ref": "athlete.json#/MetaAthlete"
           },
           "moving_time": {
             "type": "integer",
@@ -53,7 +53,7 @@
             "description": "The maximum heart rate of the athlete during this effort"
           },
           "segment": {
-            "$ref": "./definitions/segment.json#/SummarySegment"
+            "$ref": "segment.json#/SummarySegment"
           },
           "kom_rank": {
             "type": "integer",

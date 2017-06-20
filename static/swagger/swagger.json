@@ -67,13 +67,13 @@
           "200": {
             "description": "Profile information for an athlete",
             "schema": {
-              "$ref": "./definitions/athlete.json#/DetailedAthlete"
+              "$ref": "athlete.json#/DetailedAthlete"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -108,14 +108,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/athlete.json#/SummaryAthlete"
+                "$ref": "athlete.json#/SummaryAthlete"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -150,14 +150,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/athlete.json#/SummaryAthlete"
+                "$ref": "athlete.json#/SummaryAthlete"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -192,14 +192,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/athlete.json#/SummaryAthlete"
+                "$ref": "athlete.json#/SummaryAthlete"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -232,13 +232,13 @@
           "200": {
             "description": "Activity stats of the athlete",
             "schema": {
-              "$ref": "./definitions/activity_stats.json#/ActivityStats"
+              "$ref": "activity_stats.json#/ActivityStats"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -256,13 +256,13 @@
           "200": {
             "description": "Profile information for the logged-in athlete",
             "schema": {
-              "$ref": "./definitions/athlete.json#/DetailedAthlete"
+              "$ref": "athlete.json#/DetailedAthlete"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -281,7 +281,7 @@
             "description": "The athlete entity to update",
             "required": true,
             "schema": {
-              "$ref": "./definitions/athlete.json#/DetailedAthlete"
+              "$ref": "athlete.json#/DetailedAthlete"
             }
 
           }
@@ -290,13 +290,13 @@
           "200": {
             "description": "Profile information for the logged-in athlete",
             "schema": {
-              "$ref": "./definitions/athlete.json#/DetailedAthlete"
+              "$ref": "athlete.json#/DetailedAthlete"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -324,14 +324,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/athlete.json#/SummaryAthlete"
+                "$ref": "athlete.json#/SummaryAthlete"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -359,14 +359,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/athlete.json#/SummaryAthlete"
+                "$ref": "athlete.json#/SummaryAthlete"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -384,13 +384,13 @@
           "200": {
             "description": "Heart rate and power zones",
             "schema": {
-              "$ref": "./definitions/zones.json#/Zones"
+              "$ref": "zones.json#/Zones"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -417,13 +417,13 @@
           "200": {
             "description": "Representation of a segment",
             "schema": {
-              "$ref": "./definitions/segment.json#/DetailedSegment"
+              "$ref": "segment.json#/DetailedSegment"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -451,14 +451,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/segment.json#/SummarySegment"
+                "$ref": "segment.json#/SummarySegment"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -485,13 +485,13 @@
           "200": {
             "description": "Representation of a segment",
             "schema": {
-              "$ref": "./definitions/segment.json#/DetailedSegment"
+              "$ref": "segment.json#/DetailedSegment"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -569,13 +569,13 @@
           "200": {
             "description": "Representation of a segment leaderboard",
             "schema": {
-              "$ref": "./definitions/segment_leaderboard.json#/SegmentLeaderboard"
+              "$ref": "segment_leaderboard.json#/SegmentLeaderboard"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -610,14 +610,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/segment_effort.json#/SegmentEffort"
+                "$ref": "segment_effort.json#/SegmentEffort"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -674,13 +674,13 @@
           "200": {
             "description": "List of matching segments",
             "schema": {
-              "$ref": "./definitions/segment.json#/ExplorerResponse"
+              "$ref": "segment.json#/ExplorerResponse"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -708,13 +708,13 @@
           "200": {
             "description": "Representation of a segment effort",
             "schema": {
-              "$ref": "./definitions/segment_effort.json#/SegmentEffort"
+              "$ref": "segment_effort.json#/SegmentEffort"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -741,13 +741,13 @@
           "200": {
             "description": "Representation of a running race",
             "schema": {
-              "$ref": "./definitions/running_race.json#/RunningRace"
+              "$ref": "running_race.json#/RunningRace"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -775,14 +775,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/running_race.json#/RunningRace"
+                "$ref": "running_race.json#/RunningRace"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -815,13 +815,13 @@
           "200": {
             "description": "The activity's detailed representation",
             "schema": {
-              "$ref": "./definitions/activity.json#/Activity"
+              "$ref": "activity.json#/Activity"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -842,7 +842,7 @@
             "name": "body",
             "in": "body",
             "schema": {
-              "$ref": "./definitions/activity.json#/UpdatableActivity"
+              "$ref": "activity.json#/UpdatableActivity"
             }
           }
         ],
@@ -853,13 +853,13 @@
           "200": {
             "description": "The activity's detailed representation",
             "schema": {
-              "$ref": "./definitions/activity.json#/Activity"
+              "$ref": "activity.json#/Activity"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -887,7 +887,7 @@
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -927,7 +927,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/activity.json#/SummaryActivity"
+                "$ref": "activity.json#/SummaryActivity"
               }
             },
             "examples": {
@@ -1001,7 +1001,7 @@
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -1035,14 +1035,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/activity.json#/SummaryActivity"
+                "$ref": "activity.json#/SummaryActivity"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -1077,14 +1077,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/activity.json#/SummaryActivity"
+                "$ref": "activity.json#/SummaryActivity"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -1113,14 +1113,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/lap.json#/Lap"
+                "$ref": "lap.json#/Lap"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -1149,14 +1149,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/zones.json#/ActivityZone"
+                "$ref": "zones.json#/ActivityZone"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -1191,14 +1191,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/comment.json#/Comment"
+                "$ref": "comment.json#/Comment"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -1233,14 +1233,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/athlete.json#/SummaryAthlete"
+                "$ref": "athlete.json#/SummaryAthlete"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -1267,13 +1267,13 @@
           "200": {
             "description": "The detailed representation of a club",
             "schema": {
-              "$ref": "./definitions/club.json#/DetailedClub"
+              "$ref": "club.json#/DetailedClub"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -1308,14 +1308,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/athlete.json#/SummaryAthlete"
+                "$ref": "athlete.json#/SummaryAthlete"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -1350,14 +1350,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/athlete.json#/SummaryAthlete"
+                "$ref": "athlete.json#/SummaryAthlete"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -1392,14 +1392,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/club.json#/ClubAnnouncement"
+                "$ref": "club.json#/ClubAnnouncement"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -1434,14 +1434,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/activity.json#/SummaryActivity"
+                "$ref": "activity.json#/SummaryActivity"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -1468,13 +1468,13 @@
           "200": {
             "description": "A representation of the athlete's membership in the club",
             "schema": {
-              "$ref": "./definitions/club.json#/MembershipApplication"
+              "$ref": "club.json#/MembershipApplication"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -1501,13 +1501,13 @@
           "200": {
             "description": "A representation of the athlete's membership in the club",
             "schema": {
-              "$ref": "./definitions/club.json#/MembershipApplication"
+              "$ref": "club.json#/MembershipApplication"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -1535,14 +1535,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/club.json#/SummaryClub"
+                "$ref": "club.json#/SummaryClub"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -1569,13 +1569,13 @@
           "200": {
             "description": "A representation of the gear",
             "schema": {
-              "$ref": "./definitions/gear.json#/DetailedGear"
+              "$ref": "gear.json#/DetailedGear"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -1602,13 +1602,13 @@
           "200": {
             "description": "A representation of the route",
             "schema": {
-              "$ref": "./definitions/route.json#/Route"
+              "$ref": "route.json#/Route"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -1643,14 +1643,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./definitions/route.json#/Route"
+                "$ref": "route.json#/Route"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -1720,13 +1720,13 @@
           "201": {
             "description": "A representation of the created upload",
             "schema": {
-              "$ref": "./definitions/upload.json#/Upload"
+              "$ref": "upload.json#/Upload"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
@@ -1753,13 +1753,13 @@
           "200": {
             "description": "Representation of the upload",
             "schema": {
-              "$ref": "./definitions/upload.json#/Upload"
+              "$ref": "upload.json#/Upload"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./definitions/fault.json#/Fault"
+              "$ref": "fault.json#/Fault"
             }
           }
         }
