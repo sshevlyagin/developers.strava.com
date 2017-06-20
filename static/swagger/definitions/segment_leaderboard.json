@@ -1,0 +1,86 @@
+{
+  "SegmentLeaderboard": {
+    "type": "object",
+    "description": "A",
+    "properties": {
+      "entry_count": {
+        "type": "integer",
+        "description": "The total number of entries for this leaderboard"
+      },
+      "entries": {
+        "type": "array",
+        "items": {
+          "$ref": "./segment_leaderboard.json#/SegmentLeaderboardEntry"
+        }
+      }
+    }
+  },
+  "SegmentLeaderboardEntry": {
+    "type": "object",
+    "description": "A row in a segment leaderboard",
+    "properties": {
+      "athlete_name": {
+        "type": "string",
+        "description": "The name of the athlete"
+      },
+      "athlete_id": {
+        "type": "integer",
+        "description": "The unique identifier of the athlete"
+      },
+      "athlete_gender": {
+        "type": "string",
+        "enum": ["M", "F"]
+      },
+      "average_hr": {
+        "type": "number",
+        "format": "float",
+        "description": "The average cadence of the effort associated with this entry"
+      },
+      "average_watts": {
+        "type": "number",
+        "format": "float",
+        "description": "The average wattage of the effort associated with this entry"
+      },
+      "distance": {
+        "type": "number",
+        "format": "float",
+        "description": "The effort's distance in meters"
+      },
+      "elapsed_time": {
+        "type": "integer",
+        "description": "The elapsed of the segment effort associated with this entry"
+      },
+      "moving_time": {
+        "type": "integer",
+        "description": "The moving of the segment effort associated with this entry"
+      },
+      "start_date": {
+        "type": "string",
+        "format": "date-time",
+        "description": "The time at which the effort was started."
+      },
+      "start_date_local": {
+        "type": "string",
+        "format": "date-time",
+        "description": "The time at which the effort was started in the local timezone."
+      },
+      "activity_id": {
+        "type": "integer",
+        "description": "The unique identifier of the activity associated with this entry"
+      },
+      "effort_id": {
+        "type": "integer",
+        "format": "int64",
+        "description": "The unique identifier of the segment effort associated with this entry"
+      },
+      "rank": {
+        "type": "integer",
+        "description": "The rank of this entry in the leaderboard"
+      },
+      "athlete_profile": {
+        "type": "string",
+        "description": "The URL of the athlete's profile picture"
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+    <script src="/jquery.min.js"></script>
+    <script src="/tether.min.js"></script>
+    <script src="/bootstrap.min.js"></script>
+    {{ if isset .Params "scripts" }}{{ range .Params.scripts }}<script src="{{ printf "/%s" . | absURL }}"></script>{{ end }}{{ end }}
+  </body>
+</html>

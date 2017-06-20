@@ -1,0 +1,27 @@
+{
+  "Upload": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer",
+        "description": "The unique identifier of the upload"
+      },
+      "external_id": {
+        "type": "string",
+        "description": "The external identifier of the upload"
+      },
+      "error": {
+        "type": "string",
+        "description": "The error associated with this upload"
+      },
+      "status": {
+        "type": "string",
+        "description": "The status of this upload"
+      },
+      "activity_id": {
+        "type": "integer",
+        "description": "The identifier of the activity this upload resulted into"
+      }
+    }
+  }
+}

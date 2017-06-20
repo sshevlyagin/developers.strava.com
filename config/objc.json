@@ -1,0 +1,9 @@
+{
+  "coreData": "false",
+	"classPrefix": "STRV",
+	"podName": "StravaApi",
+	"podVersion": "3.0.0",
+	"gitRepoURL": "https://strava.github.io/api-client",
+	"authorName": "Strava API Developers",
+	"authorEmail": "developers@strava.com"
+}

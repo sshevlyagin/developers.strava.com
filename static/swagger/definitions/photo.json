@@ -1,0 +1,31 @@
+{
+  "PhotosSummary": {
+    "type": "object",
+    "properties": {
+      "count": {
+        "type": "integer",
+        "description": "The number of photos"
+      },
+      "primary": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "source": {
+            "type": "integer"
+          },
+          "unique_id": {
+            "type": "string"
+          },
+          "urls": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

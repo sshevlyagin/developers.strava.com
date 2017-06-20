@@ -1,0 +1,3 @@
+baseURL = "http://developers.strava.com"
+languageCode = "en-us"
+title = "Strava Developers"

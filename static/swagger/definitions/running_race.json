@@ -1,0 +1,61 @@
+{
+  "RunningRace": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer",
+        "description": "The unique identifier of this race."
+      },
+      "name": {
+        "type": "string",
+        "description": "The name of this race."
+      },
+      "running_race_type": {
+        "type": "integer",
+        "description": "The type of this race."
+      },
+      "distance": {
+        "type": "number",
+        "format": "float",
+        "description": "The race's distance, in meters."
+      },
+      "start_date_local": {
+        "type": "string",
+        "format": "date-time",
+        "description": "The time at which the race begins started in the local timezone."
+      },
+      "city": {
+        "type": "string",
+        "description": "The name of the city in which the race is taking place."
+      },
+      "state": {
+        "type": "string",
+        "description": "The name of the state or geographical region in which the race is taking place."
+      },
+      "country": {
+        "type": "string",
+        "description": "The name of the country in which the race is taking place."
+      },
+      "route_ids": {
+        "type": "array",
+        "items": {
+          "type": "integer"
+        },
+        "description": "The set of routes that cover this race's course."
+      },
+      "measurement_preference": {
+        "type": "string",
+        "enum": ["feet", "meters"],
+        "description": "The unit system in which the race should be displayed."
+      },
+      "url": {
+        "type": "string",
+        "description": "The vanity URL of this race on Strava."
+      },
+      "website_url": {
+        "type": "string",
+        "description": "The URL of this race's website."
+      }
+    }
+  }
+}

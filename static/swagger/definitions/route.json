@@ -1,0 +1,87 @@
+{
+  "Route": {
+    "type": "object",
+    "properties": {
+      "athlete": {
+        "$ref": "./athlete.json#/SummaryAthlete"
+      },
+      "description": {
+        "type": "string",
+        "description": "The description of the route"
+      },
+      "distance": {
+        "type": "number",
+        "format": "float",
+        "description": "The route's distance, in meters"
+      },
+      "elevation_gain": {
+        "type": "number",
+        "format": "float",
+        "description": "The route's elevation gain."
+      },
+      "id": {
+        "type": "integer",
+        "description": "The unique identifier of this route"
+      },
+      "map": {
+        "$ref": "./map.json#/PolylineMap"
+      },
+      "name": {
+        "type": "string",
+        "description": "The name of this route"
+      },
+      "private": {
+        "type": "boolean",
+        "description": "Whether this route is private"
+      },
+      "starred": {
+        "type": "boolean",
+        "description": "Whether this route is starred by the logged-in athlete"
+      },
+      "timestamp": {
+        "type": "integer"
+      },
+      "type": {
+        "type": "integer",
+        "description": "This route's type (1 for ride, 2 for runs)"
+      },
+      "sub_type": {
+        "type": "integer",
+        "description": "This route's sub-type (1 for road, 2 for mountain bike, 3 for cross, 4 for trail, 5 for mixed)"
+      },
+      "segments": {
+        "type": "array",
+        "items": {
+          "$ref": "./segment.json#/SummarySegment"
+        },
+        "description": "The segments traversed by this route"
+      },
+      "directions": {
+        "type": "array",
+        "items": {
+          "$ref": "#/RouteDirection"
+        },
+        "description": "The directions of this route"
+      }
+    }
+  },
+  "RouteDirection": {
+    "type": "object",
+    "description": "",
+    "properties": {
+      "distance": {
+        "type": "number",
+        "format": "float",
+        "description": "The distance in the route at which the action applies"
+      },
+      "action": {
+        "type": "integer",
+        "description": "The action of this direction"
+      },
+      "name": {
+        "type": "string",
+        "name": "A name associated with this direction"
+      }
+    }
+  }
+}

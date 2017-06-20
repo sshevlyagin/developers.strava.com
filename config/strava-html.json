@@ -1,0 +1,16 @@
+{
+  "sortParamsByRequiredFlag": true,
+	"ensureUniqueParams": true,
+	"allowUnicodeIdentifiers": false,
+	"appName": "Strava API",
+	"appDescription": "Strava API Client v3",
+	"infoUrl": "",
+	"infoEmail": "developers@strava.com",
+  "licenseName": "Apache License, Version 2.0",
+	"licenseUrl": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+  "invokerPackage": "com.strava.api.v3",
+  "modelPackage": "com.strava.api.v3.models",
+  "apiPackage": "com.strava.api.v3.services",
+	"packageName": "com.strava.api.v3",
+	"artifactVersion": "3.0.0"
+}

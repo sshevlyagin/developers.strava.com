@@ -1,0 +1,255 @@
++++
+date = "2016-02-14T16:11:58+05:30"
+title = "Strava API Reference"
+slug = "reference"
+styles = ["prettify.css","navbar-fixed-side.css","reference.css"]
+scripts = ["prettify.js","marked.js","reference.js"]
+type = "reference"
++++
+
+  <div class="sidenav">
+    <nav class="navbar navbar-default navbar-fixed-side">
+      <ul class="nav navbar-nav">
+        {{#apiInfo}}
+          {{#apis}}
+            {{#operations}}
+              <li class="dropdown" data-group="{{baseName}}">
+                <a class="dropdown-toggle" href="#api-{{baseName}}">{{baseName}}</a>
+                <ul class="dropdown-menu">
+                  {{#operation}}
+                    <li data-group="{{baseName}}" data-name="{{nickname}}" class="">
+                      <a href="#api-{{baseName}}-{{nickname}}">{{summary}}</a>
+                    </li>
+                  {{/operation}}
+                </ul>
+              </li>
+            {{/operations}}
+          {{/apis}}
+        {{/apiInfo}}
+        <li class="dropdown" data-group="models">
+          <a class="dropdown-toggle" href="#api-models">All Models</a>
+          <ul class="dropdown-menu">
+            {{#models}}
+              {{#model}}
+                <li><a href="#api-models-{{name}}">{{name}}</a></li>
+              {{/model}}
+            {{/models}}
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div id="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 left-pane">
+            <div id="project">
+              <h1>{{{appName}}}</h1>
+            </div>
+            <div id="header">
+              <div id="api-_">
+                <h2 id="welcome-to-apidoc">API and SDK Reference</h2>
+                {{#version}}
+                  <div class="app-desc">Version: {{{version}}}</div>
+                {{/version}}
+                <hr>
+                <p class="marked">{{appDescription}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 right-pane"></div>
+        </div>
+        {{#apiInfo}}
+          {{#apis}}
+            {{#operations}}
+              <div class="row">
+                <div class="col-md-6 left-pane">
+                  <div id="api-{{baseName}}">
+                    <h2>{{baseName}}</h2>
+                  </div>
+                </div>
+                <div class="col-md-6 right-pane"></div>
+              </div>
+              {{#operation}}
+                <div class="row">
+                  <div class="col-md-6 left-pane">
+                    <div id="api-{{baseName}}-{{nickname}}">
+                      <article id="api-{{baseName}}-{{nickname}}-0" data-group="User" data-name="{{nickname}}" data-version="0">
+                        <div>
+                          <h3>{{summary}} ({{nickname}})</h3>
+                        </div>
+                        <p class="marked">{{notes}}</p>
+                        <div class="http">
+                          <pre class="http-method http-method-{{httpMethod}}"><code>{{httpMethod}}</code></pre>
+                          <pre class="prettyprint language-html prettyprinted http-request-line"><code><span class="pln">{{path}}</span></code></pre>
+                        </div>
+
+                        {{#hasParams}}
+                          <h4>Parameters</h4>
+
+                          <table class="parameters">
+                            {{#pathParams}}
+                              {{>param}}
+                            {{/pathParams}}
+                            {{#queryParams}}
+                              {{>param}}
+                            {{/queryParams}}
+                            {{#formParams}}
+                              {{>param}}
+                            {{/formParams}}
+                            {{#bodyParams}}
+                              {{>param}}
+                            {{/bodyParams}}
+                          </table>
+                        {{/hasParams}}
+
+                        <h4>Responses</h4>
+
+                        <table class="parameters">
+                          {{#responses}}
+                            {{^-last}}
+                              <tr>
+                                <td width="200px">
+                                  HTTP code {{code}}
+                                </td>
+                                <td>
+                                  {{#isListContainer}}An array of <a href="#api-models-{{baseType}}">{{baseType}}</a> objects.{{/isListContainer}}
+                                  {{^isListContainer}}{{message}} {{#dataType}}An instance of <a href="#api-models-{{.}}">{{.}}</a>.{{/dataType}}{{/isListContainer}}
+                                </td>
+                              </tr>
+                            {{/-last}}
+                          {{/responses}}
+                          <tr>
+                            <td>HTTP code 4xx, 5xx</td>
+                            <td>a <a href="#api-models-Fault">Fault</a> describing the reason for the error.</td>
+                          </tr>
+                        </table>
+                      </article>
+                    </div>
+                  </div>
+                  <div class="col-md-6 right-pane" role="tabpanel">
+                    <ul class="nav nav-pills nav-tabs-examples" id="examples-{{baseName}}-{{nickname}}-tabs">
+                      <li class="nav-item">
+                        <a class="nav-link" id="examples-{{baseName}}-{{nickname}}-0-httpie-tab" data-toggle="tab" role="tab" href="#examples-{{baseName}}-{{nickname}}-0-httpie">HTTPie</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="examples-{{baseName}}-{{nickname}}-0-java-tab" data-toggle="tab" role="tab" href="#examples-{{baseName}}-{{nickname}}-0-java">Java</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="examples-{{baseName}}-{{nickname}}-0-objc-tab" data-toggle="tab" role="tab" href="#examples-{{baseName}}-{{nickname}}-0-objc">Obj-C</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="examples-{{baseName}}-{{nickname}}-0-javascript-tab" data-toggle="tab" role="tab" href="#examples-{{baseName}}-{{nickname}}-0-javascript">JavaScript</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="examples-{{baseName}}-{{nickname}}-0-csharp-tab" data-toggle="tab" role="tab" href="#examples-{{baseName}}-{{nickname}}-0-csharp">C#</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="examples-{{baseName}}-{{nickname}}-0-python-tab" data-toggle="tab" role="tab" href="#examples-{{baseName}}-{{nickname}}-0-python">Python</a>
+                      </li>
+                    </ul>
+
+                    <div class="tab-content" id="examples-{{baseName}}-{{nickname}}-content">
+                      <div class="tab-pane" id="examples-{{baseName}}-{{nickname}}-0-httpie" role="tabpanel" aria-expanded="true">
+                        <pre class="prettyprint"><code class="language-bsh">{{>sample_httpie}}</code></pre>
+                      </div>
+                      <div class="tab-pane" id="examples-{{baseName}}-{{nickname}}-0-java" role="tabpanel">
+                        <pre class="prettyprint"><code class="language-java">{{>sample_java}}</code></pre>
+                      </div>
+                      <div class="tab-pane" id="examples-{{baseName}}-{{nickname}}-0-objc" role="tabpanel">
+                        <pre class="prettyprint"><code class="language-cpp">{{>sample_objc}}</code></pre>
+                      </div>
+                      <div class="tab-pane" id="examples-{{baseName}}-{{nickname}}-0-javascript" role="tabpanel">
+                        <pre class="prettyprint"><code class="language-js">{{>sample_js}}</code></pre>
+                      </div>
+                      <div class="tab-pane" id="examples-{{baseName}}-{{nickname}}-0-csharp" role="tabpanel">
+                        <pre class="prettyprint"><code class="language-cs">{{>sample_csharp}}</code></pre>
+                      </div>
+                      <div class="tab-pane" id="examples-{{baseName}}-{{nickname}}-0-python" role="tabpanel">
+                        <pre class="prettyprint"><code class="language-python">{{>sample_python}}</code></pre>
+                      </div>
+                    </div>
+                    {{#hasExamples}}
+                      <h4>Sample Response</h4>
+                      {{#examples}}
+                        <div id="responses-{{nickname}}-{{code}}-example">
+                          <pre class="prettyprint lang-json sample"><code>{{example}}</code></pre>
+                        </div>
+                      {{/examples}}
+                    {{/hasExamples}}
+                  </div>
+                </div>
+              {{/operation}}
+            {{/operations}}
+          {{/apis}}
+
+          <div class="row">
+            <div class="col-md-6 left-pane">
+              <h1>All Models</h1>
+            </div>
+            <div class="col-md-6 right-pane"></div>
+          </div>
+          {{#models}}
+            <div class="row">
+              <div class="col-md-6 left-pane">
+                <section>
+                  {{#model}}
+                    <div id="api-models-{{name}}">
+                      <article id="api-models-{{name}}-0" data-name="{{name}}" data-version="0">
+                        <h2>{{name}}</h2>
+                        {{#isEnum}}
+                          <p>{{description}}</p>
+                          <p>>May take one of the following values:
+                            {{#allowableValues}}
+                              {{#values}}
+                                <code>{{.}}</code>{{^-last}}, {{/-last}}
+                              {{/values}}
+                            {{/allowableValues}}
+                          </p>
+                        {{/isEnum}}
+                        {{#isArrayModel}}
+                          <p>A collection of <a href="#api-models-{{arrayModelType}}">{{arrayModelType}}</a> objects. {{description}}</p>
+                        {{/isArrayModel}}
+                        {{^isEnum}}{{^isArrayModel}}
+                          <p>{{description}}</p>
+                          <table class="parameters">
+                            {{#vars}}
+                              {{>var}}
+                            {{/vars}}
+                          </table>
+                        {{/isArrayModel}}{{/isEnum}}
+                      </article>
+                    </div>
+                  {{/model}}
+                </section>
+              </div>
+              <div class="col-md-6 right-pane"></div>
+            </div>
+          {{/models}}
+        {{/apiInfo}}
+        <div id="footer">
+          <div id="api-_footer">
+            <p>Suggestions, contact, support and error reporting;
+              {{#infoUrl}}
+                <div class="app-desc">Information URL: <a href="{{{infoUrl}}}">{{{infoUrl}}}</a></div>
+              {{/infoUrl}}
+              {{#infoEmail}}
+                <div class="app-desc">Contact Info: <a href="{{{infoEmail}}}">{{{infoEmail}}}</a></div>
+              {{/infoEmail}}
+            </p>
+            {{#licenseInfo}}
+              <div class="license-info">{{{licenseInfo}}}</div>
+            {{/licenseInfo}}
+            {{#licenseUrl}}
+              <div class="license-url">{{{licenseUrl}}}</div>
+            {{/licenseUrl}}
+          </div>
+        </div>
+        <div id="generator">
+          <div class="content">
+            Generated {{generatedDate}}
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,42 @@
+{
+  "ActivityStats": {
+    "description": "A set of rolled-up statistics and totals for an athlete",
+    "properties": {
+      "biggest_ride_distance": {
+        "type": "integer",
+        "description": "The longest distance ridden by the athlete."
+      },
+      "biggest_climb_elevation_gain": {
+        "type": "integer",
+        "description": "The highest climb ridden by the athlete."
+      },
+      "recent_ride_totals": {
+        "$ref": "./activity_total.json#/ActivityTotal"
+      },
+      "recent_run_totals": {
+        "$ref": "./activity_total.json#/ActivityTotal"
+      },
+      "recent_swim_totals": {
+        "$ref": "./activity_total.json#/ActivityTotal"
+      },
+      "ytd_ride_totals": {
+        "$ref": "./activity_total.json#/ActivityTotal"
+      },
+      "ytd_run_totals": {
+        "$ref": "./activity_total.json#/ActivityTotal"
+      },
+      "ytd_swim_totals": {
+        "$ref": "./activity_total.json#/ActivityTotal"
+      },
+      "all_ride_totals": {
+        "$ref": "./activity_total.json#/ActivityTotal"
+      },
+      "all_run_totals": {
+        "$ref": "./activity_total.json#/ActivityTotal"
+      },
+      "all_swim_totals": {
+        "$ref": "./activity_total.json#/ActivityTotal"
+      }
+    }
+  }
+}

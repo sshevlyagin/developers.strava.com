@@ -1,0 +1,20 @@
+import {{{invokerPackage}}}.*;
+import {{{invokerPackage}}}.auth.*;
+import {{{invokerPackage}}}.model.*;
+import {{{invokerPackage}}}.api.{{{classname}}};
+
+import rx.Observable;
+
+public class {{{classname}}}Example {
+  public static void main(String... args) {
+    ApiClient client = new ApiClient(...);
+    {{{classname}}} api = client.createService({{{classname}}}.class);
+
+    {{#allParams}}
+    {{{dataType}}} {{{paramName}}} = {{{example}}}; // {{{dataType}}} | {{{unescapedDescription}}}
+    {{/allParams}}
+
+    {{#returnType}}Observable&lt;{{#isListContainer}}List&lt;{{returnBaseType}}>{{/isListContainer}}{{^isListContainer}}{{{returnType}}}{{/isListContainer}}> result = {{/returnType}}apiInstance.{{{operationId}}}({{#allParams}}{{{paramName}}}{{#hasMore}}, {{/hasMore}}{{/allParams}});{{#returnType}}
+    result.subscribe(System.out::println, Throwable::printStackTrace);{{/returnType}}
+  }
+}

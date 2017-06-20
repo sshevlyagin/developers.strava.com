@@ -1,0 +1,16 @@
+{
+  "Fault": {
+    "type": "object",
+    "properties": {
+      "code": {
+        "type": "integer"
+      },
+      "message": {
+        "type": "string"
+      },
+      "fields": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+.idea
+*.iml
+target/
+public/
+content/docs/reference.html
+static/README.md
+generated/

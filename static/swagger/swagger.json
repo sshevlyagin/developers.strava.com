@@ -1,0 +1,1769 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Strava API v3",
+    "description": "Strava API",
+    "version": "3.0.0"
+  },
+  "host": "www.strava.com",
+  "schemes": [
+    "https"
+  ],
+  "basePath": "/api/v3",
+  "produces": [
+    "application/json"
+  ],
+  "securityDefinitions": {
+    "strava_oauth": {
+      "type": "oauth2",
+      "flow": "accessCode",
+      "authorizationUrl": "https://www.strava.com/api/v3/oauth/authorize",
+      "tokenUrl": "https://www.strava.com/api/v3/oauth/token",
+      "scopes": {
+        "view_private": "modify pets in your account",
+        "write": "read your pets"
+      }
+    },
+    "strava_internal_oauth": {
+      "type": "oauth2",
+      "flow": "password",
+      "tokenUrl": "https://www.strava.com/api/v3/oauth/internal/token"
+    }
+  },
+  "parameters": {
+    "page": {
+      "name": "page",
+      "in": "query",
+      "description": "Page number",
+      "type": "integer"
+    },
+    "perPage": {
+      "name": "per_page",
+      "in": "query",
+      "description": "Number of items per page",
+      "type": "integer",
+      "default": 30
+    }
+  },
+  "paths": {
+    "/athletes/{id}": {
+      "get": {
+        "operationId": "getAthleteById",
+        "summary": "Get Athlete",
+        "description": "Returns an athlete for a given identifier.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the athlete.",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "Athletes"
+        ],
+        "responses": {
+          "200": {
+            "description": "Profile information for an athlete",
+            "schema": {
+              "$ref": "./definitions/athlete.json#/DetailedAthlete"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/athletes/{id}/friends": {
+      "get": {
+        "operationId": "getAthleteFriends",
+        "summary": "List Athlete Friends",
+        "description": "Returns a given athlete's friends.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the athlete.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/perPage"
+          }
+        ],
+        "tags": [
+          "Athletes"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of athletes",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./definitions/athlete.json#/SummaryAthlete"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/athletes/{id}/followers": {
+      "get": {
+        "operationId": "getAthleteFollowers",
+        "summary": "List Athlete Followers",
+        "description": "Returns the list of a given athlete's followers.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the athlete.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/perPage"
+          }
+        ],
+        "tags": [
+          "Athletes"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of athletes",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./definitions/athlete.json#/SummaryAthlete"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/athletes/{id}/both-following": {
+      "get": {
+        "operationId": "getCommonFriends",
+        "summary": "List Common Friends",
+        "description": "Returns a list of the common friends between a given athlete and the logged-in athlete.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the athlete.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/perPage"
+          }
+        ],
+        "tags": [
+          "Athletes"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of athletes",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./definitions/athlete.json#/SummaryAthlete"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/athletes/{id}/stats": {
+      "get": {
+        "operationId": "getStats",
+        "summary": "Get Athlete Stats",
+        "description": "Returns the activity stats of an athlete.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the athlete.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/perPage"
+          }
+        ],
+        "tags": [
+          "Athletes"
+        ],
+        "responses": {
+          "200": {
+            "description": "Activity stats of the athlete",
+            "schema": {
+              "$ref": "./definitions/activity_stats.json#/ActivityStats"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/athlete": {
+      "get": {
+        "operationId": "getLoggedInAthlete",
+        "summary": "Get Logged-in Athlete",
+        "description": "Returns the currently logged-in athlete",
+        "tags": [
+          "Athletes"
+        ],
+        "responses": {
+          "200": {
+            "description": "Profile information for the logged-in athlete",
+            "schema": {
+              "$ref": "./definitions/athlete.json#/DetailedAthlete"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "updateLoggedInAthlete",
+        "summary": "Update Athlete",
+        "description": "Update the currently logged-in athlete",
+        "tags": [
+          "Athletes"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "The athlete entity to update",
+            "required": true,
+            "schema": {
+              "$ref": "./definitions/athlete.json#/DetailedAthlete"
+            }
+
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Profile information for the logged-in athlete",
+            "schema": {
+              "$ref": "./definitions/athlete.json#/DetailedAthlete"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/athlete/friends": {
+      "get": {
+        "operationId": "getLoggedInAthleteFriends",
+        "summary": "List Friends",
+        "description": "Returns a list of logged-in athlete's friends, i.e. athletes followed by the logged-in athlete.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/perPage"
+          }
+        ],
+        "tags": [
+          "Athletes"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of athletes",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./definitions/athlete.json#/SummaryAthlete"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/athlete/followers": {
+      "get": {
+        "operationId": "getLoggedInAthleteFollowers",
+        "summary": "List Followers",
+        "description": "Returns a list of the logged-in athlete's followers.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/perPage"
+          }
+        ],
+        "tags": [
+          "Athletes"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of athletes",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./definitions/athlete.json#/SummaryAthlete"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/athlete/zones": {
+      "get": {
+        "operationId": "getLoggedInAthleteZones",
+        "summary": "Get Zones",
+        "description": "Returns the the logged-in athlete's heart rate and power zones.",
+        "tags": [
+          "Athletes"
+        ],
+        "responses": {
+          "200": {
+            "description": "Heart rate and power zones",
+            "schema": {
+              "$ref": "./definitions/zones.json#/Zones"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/segments/{id}": {
+      "get": {
+        "operationId": "getSegmentById",
+        "summary": "Get Segment",
+        "description": "Returns the segment identified by the given identifier.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the segment.",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "Segments"
+        ],
+        "responses": {
+          "200": {
+            "description": "Representation of a segment",
+            "schema": {
+              "$ref": "./definitions/segment.json#/DetailedSegment"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/segments/starred": {
+      "get": {
+        "operationId": "getLoggedInAthleteStarredSegments",
+        "summary": "List Starred Segments",
+        "description": "Returns a list of the segments starred by logged-in athlete.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/perPage"
+          }
+        ],
+        "tags": [
+          "Segments"
+        ],
+        "responses": {
+          "200": {
+            "description": "Representation of a segment",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./definitions/segment.json#/SummarySegment"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/segments/{id}/starred": {
+      "put": {
+        "operationId": "starSegment",
+        "summary": "Star Segment",
+        "description": "Stars a segment referenced by its identifier.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the segment to star.",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "Segments"
+        ],
+        "responses": {
+          "200": {
+            "description": "Representation of a segment",
+            "schema": {
+              "$ref": "./definitions/segment.json#/DetailedSegment"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/segments/{id}/leaderboard": {
+      "get": {
+        "operationId": "getLeaderboardBySegmentId",
+        "summary": "Get Segment Leaderboard",
+        "description": "Returns the leaderboard of a segment.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the segment to get leaderbaords for.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "gender",
+            "in": "query",
+            "description": "Enables filtering of entries by a given gender",
+            "type": "string",
+            "enum": ["M", "F"]
+          },
+          {
+            "name": "age_group",
+            "in": "query",
+            "description": "Enables filtering of entries by a given age-group",
+            "type": "string",
+            "enum": ["0_24", "25_34", "35_44", "45_54", "55_64", "65_plus"]
+          },
+          {
+            "name": "weight_class",
+            "in": "query",
+            "description": "Enables filtering of entries by a given weight class",
+            "type": "string",
+            "enum": ["0_124", "125_149", "150_164", "165_179", "180_199", "200_plus", "0_54", "55_64", "65_74", "75_84", "85_94", "95_plus"]
+          },
+          {
+            "name": "following",
+            "in": "query",
+            "description": "Enables filtering of entries by the friends of the logged-in athlete",
+            "type": "boolean"
+          },
+          {
+            "name": "club_id",
+            "in": "query",
+            "description": "Enables filtering of entries by the membership of a given clu",
+            "type": "integer"
+          },
+          {
+            "name": "date_range",
+            "in": "query",
+            "description": "Enables filtering of entries by a given date range",
+            "type": "string",
+            "enum": ["this_year", "this_month", "this_week", "today"]
+          },
+          {
+            "name": "context_entries",
+            "in": "query",
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/perPage"
+          }
+        ],
+        "tags": [
+          "Segments"
+        ],
+        "responses": {
+          "200": {
+            "description": "Representation of a segment leaderboard",
+            "schema": {
+              "$ref": "./definitions/segment_leaderboard.json#/SegmentLeaderboard"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/segments/{id}/all_efforts": {
+      "get": {
+        "operationId": "getEffortsBySegmentId",
+        "summary": "List Segment Efforts",
+        "description": "Returns a list of the efforts for a segment referenced by its id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the segment.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/perPage"
+          }
+        ],
+        "tags": [
+          "SegmentEfforts"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of segment efforts",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./definitions/segment_effort.json#/SegmentEffort"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/segments/explore": {
+      "get": {
+        "operationId": "exploreSegments",
+        "summary": "Explore segments",
+        "description": "Returns the segments matching a specified query",
+        "parameters": [
+          {
+            "name": "bounds",
+            "in": "query",
+            "description": "The geographical boundaries of the search",
+            "required": true,
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "float"
+            },
+            "collectionFormat": "csv",
+            "minItems": 4,
+            "maxItems": 4
+          },
+          {
+            "name": "activity_type",
+            "in": "query",
+            "description": "The activity of the segments",
+            "type": "string",
+            "enum": ["running", "riding"]
+          },
+          {
+            "name": "min_cat",
+            "in": "query",
+            "description": "The minimum category of the segment's (for climbs)",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 5
+          },
+          {
+            "name": "max_cat",
+            "in": "query",
+            "description": "The maximum category of the segment's (for climbs)",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 5
+          }
+        ],
+        "tags": [
+          "Segments"
+        ],
+        "responses": {
+          "200": {
+            "description": "List of matching segments",
+            "schema": {
+              "$ref": "./definitions/segment.json#/ExplorerResponse"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/segment_efforts/{id}": {
+      "get": {
+        "operationId": "getSegmentEffortById",
+        "summary": "Get Segment Effort",
+        "description": "Returns a segment effort for a given identifier.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the segment effort.",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "SegmentEfforts"
+        ],
+        "responses": {
+          "200": {
+            "description": "Representation of a segment effort",
+            "schema": {
+              "$ref": "./definitions/segment_effort.json#/SegmentEffort"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/running_races/{id}": {
+      "get": {
+        "operationId": "getRunningRaceById",
+        "summary": "Get Running Race",
+        "description": "Returns a running race for a given identifier.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the running race.",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "RunningRaces"
+        ],
+        "responses": {
+          "200": {
+            "description": "Representation of a running race",
+            "schema": {
+              "$ref": "./definitions/running_race.json#/RunningRace"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/running_races": {
+      "get": {
+        "operationId": "getRunningRaces",
+        "summary": "List Running Races",
+        "description": "Returns a list running races based on a set of search criterias.",
+        "parameters": [
+          {
+            "name": "year",
+            "in": "query",
+            "description": "Filters the list by a given year",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "RunningRaces"
+        ],
+        "responses": {
+          "200": {
+            "description": "Representation of a list of running race",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./definitions/running_race.json#/RunningRace"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/activities/{id}": {
+      "get": {
+        "operationId": "getActivityById",
+        "summary": "Get Activity",
+        "description": "Returns an activity for a given identifier.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the activity.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "include_all_efforts",
+            "in": "query",
+            "description": "Whether all segments efforts should be included in the response",
+            "type": "boolean"
+          }
+        ],
+        "tags": [
+          "Activities"
+        ],
+        "responses": {
+          "200": {
+            "description": "The activity's detailed representation",
+            "schema": {
+              "$ref": "./definitions/activity.json#/Activity"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "updateActivityById",
+        "summary": "Update Activity",
+        "description": "Updates an activity for a given identifier",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the activity.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "./definitions/activity.json#/UpdatableActivity"
+            }
+          }
+        ],
+        "tags": [
+          "Activities"
+        ],
+        "responses": {
+          "200": {
+            "description": "The activity's detailed representation",
+            "schema": {
+              "$ref": "./definitions/activity.json#/Activity"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteActivityById",
+        "summary": "Delete Activity",
+        "description": "Deletes an activity for a given identifier",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the activity.",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "Activities"
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/athlete/activities": {
+      "get": {
+        "operationId": "getLoggedInAthleteActivities",
+        "summary": "List Athlete Activities",
+        "description": "Returns the activities of an athlete for a specific identifier.",
+        "parameters": [
+          {
+            "name": "before",
+            "in": "query",
+            "description": "An epoch timestamp to use for filtering activities that have taken place before a certain time",
+            "type": "integer"
+          },
+          {
+            "name": "after",
+            "in": "query",
+            "description": "An epoch timestamp to use for filtering activities that have taken place after a certain time",
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/perPage"
+          }
+        ],
+        "tags": [
+          "Activities"
+        ],
+        "responses": {
+          "200": {
+            "description": "Activities of the athlete",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./definitions/activity.json#/SummaryActivity"
+              }
+            },
+            "examples": {
+              "application/json": [
+                {
+                  "id": 999582172,
+                  "resource_state": 2,
+                  "external_id": "garmin_push_1747504801",
+                  "upload_id": 1101802971,
+                  "athlete": {
+                    "id": 136697,
+                    "resource_state": 1
+                  },
+                  "name": "Jonathan Pon Memorial Ride 2017 Day 2",
+                  "distance": 122111,
+                  "moving_time": 18748,
+                  "elapsed_time": 25880,
+                  "total_elevation_gain": 1055,
+                  "type": "Ride",
+                  "start_date": "2017-05-21T13:35:33Z",
+                  "start_date_local": "2017-05-21T06:35:33Z",
+                  "timezone": "(GMT-08:00) America/Los_Angeles",
+                  "utc_offset": -25200,
+                  "start_latlng": [
+                    38.46,
+                    -123.05
+                  ],
+                  "end_latlng": [
+                    37.87,
+                    -122.5
+                  ],
+                  "location_city": null,
+                  "location_state": null,
+                  "location_country": "United States",
+                  "start_latitude": 38.46,
+                  "start_longitude": -123.05,
+                  "achievement_count": 22,
+                  "kudos_count": 35,
+                  "comment_count": 0,
+                  "athlete_count": 3,
+                  "photo_count": 0,
+                  "map": {
+                    "id": "a999582172",
+                    "summary_polyline": "}_wiFh{_nVxJaDiBmKbc@`RpEda@pb@~b@v_@xiAcF|l@gb@j`ABrg@~KfNxh@zLrPpSr`@yTvDjr@f`B_q@`@wMlJnC|h@sU`^wBdHaMx]d@lHuLcCcLxLq@nKoUlnA_]hDyIhi@mVf@wH|tAgd@zi@qn@vQee@rZoPvJgVjQtGrIsNnDxS~UsKpqAecBmFwn@bAun@wb@e\\wMiWcFcp@sOmUcX}N}Lya@qBsn@bCg[lOeQjj@uwBzMwuCvc@yM~HwYgVsc@kA}a@jp@{kCJqcC`Okm@pCqz@v|@_hCnYqaBlQ_g@fe@y_@b{@kEzo@cPzfAsdBhAw~AuDeg@{J}l@gYku@wCgd@xK{kB|vAq|Chq@yiBrc@sp@bFaqC~Xam@{IcHhMsc@p_@bRvMeB~cBw`AtT_Vfu@hu@~}@nd@nCsvBrLi}@mB}J``@y{@~oBmuCxqAa[fpAgDhdBnSz_ArTpJbM|zAin@xR_VxQzKrS`^fIp@bNmExa@uf@fEi`B`^{}@na@q]ta@FndA`c@~c@^`Nj]?jMlsAtl@bLiN`v@m@vRkZvQhJzGkGu@kOxk@uKvYiiAtt@ki@zZyDtNlCG`Jz^fDny@orAfUkRhSl@nt@rf@rs@fH|EjP`~@RfFcWjMyIn]~LtJqL~QH`WdJXpaAta@hGd|AsPxwAasBdc@m\\eHK",
+                    "resource_state": 2
+                  },
+                  "trainer": false,
+                  "commute": false,
+                  "manual": false,
+                  "private": false,
+                  "flagged": false,
+                  "gear_id": "b3123396",
+                  "average_speed": 6.513,
+                  "max_speed": 17.3,
+                  "average_temp": 26,
+                  "average_watts": 132.1,
+                  "kilojoules": 2476.6,
+                  "device_watts": false,
+                  "has_heartrate": false,
+                  "elev_high": 79.6,
+                  "elev_low": -9.6,
+                  "pr_count": 4,
+                  "total_photo_count": 0,
+                  "has_kudoed": false,
+                  "workout_type": 10,
+                  "suffer_score": null
+                }
+              ]
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/activities/following": {
+      "get": {
+        "operationId": "getLoggedInAthleteFriendsActivities",
+        "summary": "List Friends' Activities",
+        "description": "Returns the activities of the friends of the logged-in athlete.",
+        "parameters": [
+          {
+            "name": "before",
+            "in": "query",
+            "description": "An epoch timestamp to use for filtering activities that have taken place before a certain time",
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/perPage"
+          }
+        ],
+        "tags": [
+          "Activities"
+        ],
+        "responses": {
+          "200": {
+            "description": "Friends activities",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./definitions/activity.json#/SummaryActivity"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/activities/{id}/related": {
+      "get": {
+        "operationId": "getRelatedActivities",
+        "summary": "List Related Activities",
+        "description": "Returns a list of activities related to another using specific identifier.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The unique identifier of the activity.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/perPage"
+          }
+        ],
+        "tags": [
+          "Activities"
+        ],
+        "responses": {
+          "200": {
+            "description": "Related activities",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./definitions/activity.json#/SummaryActivity"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/activities/{id}/laps": {
+      "get": {
+        "operationId": "getLapsByActivityId",
+        "summary": "List Activity Laps",
+        "description": "Returns the laps of an activity identified by an identifier.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the activity.",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "Activities"
+        ],
+        "responses": {
+          "200": {
+            "description": "Activity Laps",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./definitions/lap.json#/Lap"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/activities/{id}/zones": {
+      "get": {
+        "operationId": "getZonesByActivityId",
+        "summary": "Get Activity Zones",
+        "description": "Returns the zones of an activity identified by an identifier.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the activity.",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "Activities"
+        ],
+        "responses": {
+          "200": {
+            "description": "Activity Zones",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./definitions/zones.json#/ActivityZone"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/activities/{id}/comments": {
+      "get": {
+        "operationId": "getCommentsByActivityId",
+        "summary": "List Activity Comments",
+        "description": "Returns the comments of an activity identified by an identifier.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the activity.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/perPage"
+          }
+        ],
+        "tags": [
+          "Activities"
+        ],
+        "responses": {
+          "200": {
+            "description": "Comments",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./definitions/comment.json#/Comment"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/activities/{id}/kudos": {
+      "get": {
+        "operationId": "getKudoersByActivityId",
+        "summary": "List Activity Kudoers",
+        "description": "Returns the athletes who kudoed an activity identified by an identifier.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the activity.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/perPage"
+          }
+        ],
+        "tags": [
+          "Activities"
+        ],
+        "responses": {
+          "200": {
+            "description": "Comments",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./definitions/athlete.json#/SummaryAthlete"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/clubs/{id}": {
+      "get": {
+        "operationId": "getClubById",
+        "summary": "Get Club",
+        "description": "Returns a given club using its identifier.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the club.",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "Clubs"
+        ],
+        "responses": {
+          "200": {
+            "description": "The detailed representation of a club",
+            "schema": {
+              "$ref": "./definitions/club.json#/DetailedClub"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/clubs/{id}/members": {
+      "get": {
+        "operationId": "getClubMembersById",
+        "summary": "List Club Members",
+        "description": "Returns a list of the athletes who are members of a given club.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the club.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/perPage"
+          }
+        ],
+        "tags": [
+          "Clubs"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of summary athlete representations",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./definitions/athlete.json#/SummaryAthlete"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/clubs/{id}/admins": {
+      "get": {
+        "operationId": "getClubAdminsById",
+        "summary": "List Club Administrators",
+        "description": "Returns a list of the administrators of a given club.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the club.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/perPage"
+          }
+        ],
+        "tags": [
+          "Clubs"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of summary athlete representations",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./definitions/athlete.json#/SummaryAthlete"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/clubs/{id}/announcements": {
+      "get": {
+        "operationId": "getClubAnnouncementsById",
+        "summary": "List Club Announcements",
+        "description": "Returns a list of the announcements of a given club.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the club.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/perPage"
+          }
+        ],
+        "tags": [
+          "Clubs"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of announcements",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./definitions/club.json#/ClubAnnouncement"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/clubs/{id}/activities": {
+      "get": {
+        "operationId": "getClubActivitiesById",
+        "summary": "List Club Activities",
+        "description": "Returns a list of the activities of a given club.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the club.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/perPage"
+          }
+        ],
+        "tags": [
+          "Clubs"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of activities",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./definitions/activity.json#/SummaryActivity"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/clubs/{id}/join": {
+      "post": {
+        "operationId": "joinClubById",
+        "summary": "Join Club",
+        "description": "Adds the logged-in athlete to the club's membership.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the club.",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "Clubs"
+        ],
+        "responses": {
+          "200": {
+            "description": "A representation of the athlete's membership in the club",
+            "schema": {
+              "$ref": "./definitions/club.json#/MembershipApplication"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/clubs/{id}/leave": {
+      "post": {
+        "operationId": "leaveClubById",
+        "summary": "Leave Club",
+        "description": "Removes the logged-in athlete from the club's membership.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the club.",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "Clubs"
+        ],
+        "responses": {
+          "200": {
+            "description": "A representation of the athlete's membership in the club",
+            "schema": {
+              "$ref": "./definitions/club.json#/MembershipApplication"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/athlete/clubs": {
+      "get": {
+        "operationId": "getLoggedInAthleteClubs",
+        "summary": "List Athlete Clubs",
+        "description": "Returns a list of the clubs whose membership includes the logged-in athlete.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/perPage"
+          }
+        ],
+        "tags": [
+          "Clubs"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of summary club representations",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./definitions/club.json#/SummaryClub"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/gear/{id}": {
+      "get": {
+        "operationId": "getGearById",
+        "summary": "Get Equipment",
+        "description": "Returns an equipment using its identifier.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the gear.",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "Gears"
+        ],
+        "responses": {
+          "200": {
+            "description": "A representation of the gear",
+            "schema": {
+              "$ref": "./definitions/gear.json#/DetailedGear"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/routes/{id}": {
+      "get": {
+        "operationId": "getRouteById",
+        "summary": "Get Route",
+        "description": "Returns a route using its identifier.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the route.",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "Routes"
+        ],
+        "responses": {
+          "200": {
+            "description": "A representation of the route",
+            "schema": {
+              "$ref": "./definitions/route.json#/Route"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/athletes/{id}/routes": {
+      "get": {
+        "operationId": "getRoutesByAthleteId",
+        "summary": "List Athlete Routes",
+        "description": "Returns a list of the routes created by an athlete using their identifier.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the athlete.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/perPage"
+          }
+        ],
+        "tags": [
+          "Routes"
+        ],
+        "responses": {
+          "200": {
+            "description": "A representation of the route",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "./definitions/route.json#/Route"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/uploads": {
+      "post": {
+        "operationId": "createUpload",
+        "summary": "Upload Activity",
+        "description": "Uploads a new data file to create an activity from.",
+        "consumes": ["multipart/form-data"],
+        "parameters": [
+          {
+            "name": "file",
+            "in": "formData",
+            "type": "file",
+            "description": "The uploaded file"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "description": "The desired name of the resulting activity.",
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "in": "formData",
+            "description": "The desired description of the resulting activity.",
+            "type": "string"
+          },
+          {
+            "name": "private",
+            "in": "formData",
+            "description": "Whether the resulting activity should be private.",
+            "type": "integer"
+          },
+          {
+            "name": "trainer",
+            "in": "formData",
+            "description": "Whether the resulting activity should be marked as having been performed on a trainer.",
+            "type": "string"
+          },
+          {
+            "name": "commute",
+            "in": "formData",
+            "description": "Whether the resulting activity should be tagged as a commute.",
+            "type": "string"
+          },
+          {
+            "name": "data_type",
+            "in": "formData",
+            "description": "The format of the uploaded file.",
+            "type": "string",
+            "enum": ["fit", "fit.gz", "tcx", "tcx.gz", "gpx", "gpx.gz"]
+          },
+          {
+            "name": "external_id",
+            "in": "formData",
+            "description": "The desired external identifier of the resulting activity.",
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Uploads"
+        ],
+        "responses": {
+          "201": {
+            "description": "A representation of the created upload",
+            "schema": {
+              "$ref": "./definitions/upload.json#/Upload"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/uploads/{uploadId}": {
+      "get": {
+        "operationId": "getUploadById",
+        "summary": "Get Upload",
+        "description": "Returns an upload for a given identifier.",
+        "parameters": [
+          {
+            "name": "uploadId",
+            "in": "path",
+            "description": "The identifier of the upload.",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "Uploads"
+        ],
+        "responses": {
+          "200": {
+            "description": "Representation of the upload",
+            "schema": {
+              "$ref": "./definitions/upload.json#/Upload"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "./definitions/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    }
+  }
+}

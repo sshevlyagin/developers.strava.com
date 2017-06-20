@@ -1,0 +1,58 @@
+body {
+  padding-top: 54px;
+}
+
+body, p, a, div, th, td {
+  font-family: "Open Sans", "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-shadow: none !important;
+}
+
+.content {
+  padding: 3rem 1.5rem;
+}
+
+nav.bg-inverse {
+  background-color: #333 !important;
+}
+
+code {
+  font-size: 14px;
+  font-family: "Source Code Pro", monospace;
+  font-style: normal;
+  font-weight: 400;
+}
+
+td {
+  vertical-align: top;
+  padding: 2px 8px;
+  border: #e0e0e0 1px solid;
+}
+
+table.parameters {
+  border: none;
+}
+
+table.parameters tr {
+  border-top: 1px solid #E5E5E5;
+}
+
+table.parameters tr:first-child {
+  border-top: none;
+}
+
+table.parameters td {
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+table.parameters td:first-child {
+  text-align: right
+}
+
+.parameter-description {
+  color: #999;
+  font-size: 12px;
+}

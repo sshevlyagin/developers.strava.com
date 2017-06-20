@@ -1,0 +1,37 @@
+{
+  "ActivityType": {
+    "type": "string",
+    "enum": [
+      "AlpineSki",
+      "BackcountrySki",
+      "Canoeing",
+      "Crossfit",
+      "EBikeRide",
+      "Elliptical",
+      "Hike",
+      "IceSkate",
+      "InlineSkate",
+      "Kayaking",
+      "Kitesurf",
+      "NordicSki",
+      "Ride",
+      "RockClimbing",
+      "RollerSki",
+      "Rowing",
+      "Run",
+      "Snowboard",
+      "Snowshoe",
+      "StairStepper",
+      "StandUpPaddling",
+      "Surfing",
+      "Swim",
+      "VirtualRide",
+      "Walk",
+      "WeightTraining",
+      "Windsurf",
+      "Workout",
+      "Yoga"
+    ],
+    "description": "An enumeration of the types an activity may have."
+  }
+}

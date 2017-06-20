@@ -1,0 +1,248 @@
+{
+  "Activity": {
+    "allOf": [
+      {
+        "$ref": "./definitions/activity.json#/SummaryActivity"
+      },
+      {
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "The description of the activity"
+          },
+          "photos": {
+            "$ref": "./definitions/photo.json#/PhotosSummary"
+          },
+          "gear": {
+            "$ref": "./definitions/gear.json#/SummaryGear"
+          },
+          "calories": {
+            "type": "number",
+            "format": "float",
+            "description": "The number of kilocalories consumed during this activity"
+          },
+          "segment_efforts": {
+            "type": "array",
+            "items": {
+              "$ref": "./definitions/segment_effort.json#/SegmentEffort"
+            }
+          },
+          "device_name": {
+            "type": "string",
+            "description": "The name of the device used to record the activity"
+          },
+          "embed_token": {
+            "type": "string",
+            "description": "The token used to embed a Strava activity"
+          },
+          "splits_metric": {
+            "type": "array",
+            "items": {
+              "$ref": "./definitions/split.json#/Split"
+            },
+            "description": "The splits of this activity in metric units (for runs)"
+          },
+          "splits_standard": {
+            "type": "array",
+            "items": {
+              "$ref": "./definitions/split.json#/Split"
+            },
+            "description": "The splits of this activity in imperial units (for runs)"
+          },
+          "laps": {
+            "type": "array",
+            "items": {
+              "$ref": "./definitions/lap.json#/Lap"
+            }
+          },
+          "best_efforts": {
+            "type": "array",
+            "items": {
+              "$ref": "./definitions/segment_effort.json#/SegmentEffort"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "SummaryActivity": {
+    "allOf": [
+      {
+        "$ref": "./definitions/activity.json#/MetaActivity"
+      },
+      {
+        "properties": {
+          "external_id": {
+            "type": "string",
+            "description": "The identifier provided at upload time"
+          },
+          "upload_id": {
+            "type": "integer",
+            "description": "The identifier of the upload that resulted in this activity"
+          },
+          "athlete": {
+            "$ref": "./definitions/athlete.json#/MetaAthlete"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the activity"
+          },
+          "distance": {
+            "type": "number",
+            "format": "float",
+            "description": "The activity's distance, in meters"
+          },
+          "moving_time": {
+            "type": "integer",
+            "description": "The activity's moving time"
+          },
+          "elapsed_time": {
+            "type": "integer",
+            "description": "The activity's elapsed time"
+          },
+          "total_elevation_gain": {
+            "type": "number",
+            "format": "float",
+            "description": "The activity's total elevation gain."
+          },
+          "elev_high": {
+            "type": "number",
+            "format": "float",
+            "description": "The activity's highest elevation, in meters"
+          },
+          "elev_low": {
+            "type": "number",
+            "format": "float",
+            "description": "The activity's lowest elevation, in meters"
+          },
+          "type": {
+            "$ref": "./definitions/activity_type.json#/ActivityType"
+          },
+          "start_date": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The time at which the activity was started."
+          },
+          "start_date_local": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The time at which the activity was started in the local timezone."
+          },
+          "timezone": {
+            "type": "string",
+            "description": "The timezone of the activity"
+          },
+          "start_latlng": {
+            "$ref": "./definitions/latlng.json#/LatLng"
+          },
+          "end_latlng": {
+            "$ref": "./definitions/latlng.json#/LatLng"
+          },
+          "achievement_count": {
+            "type": "integer",
+            "description": "The number of achievements gained during this activity"
+          },
+          "kudos_count": {
+            "type": "integer",
+            "description": "The number of kudos given for this activity"
+          },
+          "comment_count": {
+            "type": "integer",
+            "description": "The number of comments for this activity"
+          },
+          "athlete_count": {
+            "type": "integer",
+            "description": "The number of athletes for taking part in a group activity",
+            "minimum": 1
+          },
+          "photo_count": {
+            "type": "integer",
+            "description": "The number of Instagram photos for this activity"
+          },
+          "total_photo_count": {
+            "type": "integer",
+            "description": "The number of Instagram and Strava photos for this activity"
+          },
+          "map": {
+            "$ref": "./definitions/map.json#/PolylineMap"
+          },
+          "trainer": {
+            "type": "boolean",
+            "description": "Whether this activity was recorded on a training machine"
+          },
+          "commute": {
+            "type": "boolean",
+            "description": "Whether this activity is a commute"
+          },
+          "manual": {
+            "type": "boolean",
+            "description": "Whether this activity was created manually"
+          },
+          "private": {
+            "type": "boolean",
+            "description": "Whether this activity is private"
+          },
+          "flagged": {
+            "type": "boolean",
+            "description": "Whether this activity is flagged"
+          },
+          "workout_type": {
+            "type": "integer",
+            "description": "The activity's workout type"
+          },
+          "average_speed": {
+            "type": "number",
+            "format": "float",
+            "description": "The activity's average speed, in meters per second"
+          },
+          "max_speed": {
+            "type": "number",
+            "format": "float",
+            "description": "The activity's max speed, in meters per second"
+          },
+          "has_kudoed": {
+            "type": "boolean",
+            "description": "Whether the logged-in athlete has kudoed this activity"
+          }
+        }
+      }
+    ]
+  },
+  "MetaActivity": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer",
+        "description": "The unique identifier of the activity"
+      }
+    }
+  },
+  "UpdatableActivity": {
+    "type": "object",
+    "properties": {
+      "commute": {
+        "type": "boolean",
+        "description": "Whether this activity is a commute"
+      },
+      "trainer": {
+        "type": "boolean",
+        "description": "Whether this activity was recorded on a training machine"
+      },
+      "description": {
+        "type": "string",
+        "description": "The description of the activity"
+      },
+      "name": {
+        "type": "string",
+        "description": "The name of the activity"
+      },
+      "type": {
+        "$ref": "./activity_type.json#/ActivityType"
+      },
+      "private": {
+        "type": "boolean",
+        "description": "Whether this activity is private"
+      }
+    }
+  }
+}

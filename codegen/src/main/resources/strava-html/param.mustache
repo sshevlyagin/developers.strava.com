@@ -1,0 +1,26 @@
+<tr>
+  <td width="200px">
+    {{#isBodyParam}}
+      &lt;Not a named parameter>
+    {{/isBodyParam}}
+    {{^isBodyParam}}
+      <span class="parameter-name">{{baseName}}</span>
+    {{/isBodyParam}}
+    </br>
+    <span class="parameter-description">
+      {{^required}}{{/required}}{{#required}}required {{/required}}{{dataType}}, in
+          {{#isFormParam}}form{{/isFormParam}}
+          {{#isQueryParam}}query{{/isQueryParam}}
+          {{#isPathParam}}path{{/isPathParam}}
+          {{#isBodyParam}}body{{/isBodyParam}}
+    </span>
+  </td>
+  <td>
+    {{#isBodyParam}}
+      An instance of <a href="#api-models-{{dataType}}">{{dataType}}</a>.
+    {{/isBodyParam}}
+    {{^isBodyParam}}
+      {{description}}{{#isEnum}} May take one of the following values: {{#_enum}}<code>{{.}}</code>{{^-last}}, {{/-last}}{{/_enum}}{{/isEnum}}
+    {{/isBodyParam}}
+  </td>
+</tr>
