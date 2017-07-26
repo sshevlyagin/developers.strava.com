@@ -1,0 +1,10 @@
+default:
+  skip: true
+  triggers:
+    master:
+      - dockerize
+
+dockerize:
+  tasks:
+    dockerize:
+      - *docker
