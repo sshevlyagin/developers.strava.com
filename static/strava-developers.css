@@ -1,28 +1,52 @@
-body {
-  padding-top: 54px;
-}
+/* Resets */
 
-body, p, a, div, th, td {
-  font-family: "Open Sans", "Helvetica Neue",Helvetica,Arial,sans-serif;
+body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 14px;
+  line-height: 1.45em;
   text-shadow: none !important;
 }
-
 .content {
   padding: 3rem 1.5rem;
 }
-
-nav.bg-inverse {
-  background-color: #333 !important;
-}
-
 code {
   font-size: 14px;
   font-family: "Source Code Pro", monospace;
   font-style: normal;
   font-weight: 400;
 }
+
+/* Typography */
+h1 {
+  font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: -0.015em;
+}
+h2, h3, h4, h5, h6 {
+  font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+/* Global Nav */
+nav.navbar {
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+nav.bg-inverse {
+  background-color: #333 !important;
+}
+nav.bg-inverse a:list,
+nav.bg-inverse a:visited {
+  color: #999;
+}
+nav.bg-inverse a:hover,
+nav.bg-inverse a:active {
+  color: #fff;
+}
+
+/* Tables */
 
 td {
   vertical-align: top;
@@ -52,7 +76,17 @@ table.parameters td:first-child {
   text-align: right
 }
 
+
+/* Components */
+.jumbotron {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
 .parameter-description {
   color: #999;
   font-size: 12px;
+}
+
+.card {
+  margin-bottom: 15px;
 }
