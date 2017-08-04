@@ -6,10 +6,6 @@ body {
   padding-top: 0;
 }
 
-.container-fluid.reference {
-  margin-top: 54px;
-}
-
 * {
 	box-sizing: border-box;
 }

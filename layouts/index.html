@@ -1,66 +1,94 @@
 {{ partial "header.html" . }}
-  <div class="jumbotron">
-    <div class="container">
-      <h1 class="display-3">Welcome Developers</h1>
-      <p>Strava athletes upload millions of activities every day. This rich data set yields diverse opportunities for developers, from creating new hardware to augmenting the Strava experience.</p>
+  <div class="hero">
+    <div class="jumbotron">
+      <div class="container">
+        <div class='display-3'>
+          <p>Strava athletes upload millions of activities every day</p>
+          <h2>Our open API and this rich data set yields diverse opportunities for developers, from creating new hardware to augmenting the Strava experience.</h2>
+        </div>
+      </div>
     </div>
   </div>
-
   <div class="container">
     <div class="row">
       <div class="col-md-4">
         <div class="card">
-          <img class="card-img-top" src="http://labs.strava.com/assets/img/tile-heatmap1415.png" alt="Card image cap">
           <div class="card-block">
-            <h4 class="card-title">Your Application</h4>
-            <p class="card-text">Register or edit the details of your Strava application.</p>
-            <a href="https://www.strava.com/settings/api" class="btn btn-primary">Register or Manage</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img class="card-img-top" src="http://labs.strava.com/assets/img/tile-heatmap1415.png" alt="Card image cap">
-          <div class="card-block">
-            <h4 class="card-title">API Documentation</h4>
-            <p class="card-text">Access the documentation for the Strava API.</p>
-            <a href="/docs/reference" class="btn btn-primary">Read The Docs</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img class="card-img-top" src="http://labs.strava.com/assets/img/tile-heatmap1415.png" alt="Card image cap">
-          <div class="card-block">
-            <h4 class="card-title">Client Libraries</h4>
-            <p class="card-text">View the libraries you can leverage to easily integrate Strava data in your app.</p>
-            <a href="#" class="btn btn-primary">Coming Soon</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-block">
-            <h4 class="card-title"><a href="https://www.strava.com/apps">App Showcase</a></h4>
-            <p class="card-text">Check out what other developers are building with the Strava API.</p>
+            <h3 class="card-title">Documentation</h3>
+            <p class="card-text">Access the documentation.</p>
+            <a href="/docs/reference" class="btn btn-primary">Learn</a>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="card">
           <div class="card-block">
-            <h4 class="card-title"><a href="/guidelines/">Brand Guidelines</a></h4>
-            <p class="card-text">Read the guidelines for crediting Strava as a source of data in your app.</p>
+            <h3 class="card-title">Playground</h3>
+            <p class="card-text">Try the API the easy way.</p>
+            <a href="/playground" class="btn btn-primary">Explore</a>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="card">
           <div class="card-block">
-            <h4 class="card-title"><a href="https://www.strava.com/api-agreement">Terms of Service</a></h4>
-            <p class="card-text">Read'em.</p>
+            <h3>Client Libraries </h3>
+            <p class="card-text">Libraries to get you started.</p>
+            <a href="" class="btn btn-secondary btn-disabled" disabled="disabled">Coming Soon</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-block">
+            <h3 class="card-title">Your App</h3>
+            <p class="card-text">Register or edit the details of your app.</p>
+            <a href="https://www.strava.com/settings/api" class="btn btn-primary">Create/Manage</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-block">
+            <h3 class="card-title">Agreement and Brand Guidelines</h3>
+            <p class="card-text">To use the Strava API, you need to comply with the Strava API Agreement and the Brand Guidelines. Mandatory logos, linking and attribution rules can also be found in the guidelines.</p>
+            <a href="https://www.strava.com/legal/api" class="btn btn-primary">Agreement</a> <a href="/guidelines" class="btn btn-primary">Guidelines</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-block">
+            <h3 class="card-title">App Directory</h3>
+            <p class="card-text">See what other apps developers have built.</p>
+            <a href="https://www.strava.com/apps" class="btn btn-primary">Browse</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-block">
+            <h3 class="card-title">Engineering Blog</h3>
+            <p class="card-text">Read what @StravaEng is up to.</p>
+            <a href="https://medium.com/strava-engineering" class="btn btn-primary">Enjoy</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-block">
+            <h3 class="card-title">Mailing List</h3>
+            <p class="card-text">Talk to other Strava developers.</p>
+            <a href="https://groups.google.com/forum/#!forum/strava-api" class="btn btn-primary">Join</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-block">
+            <h3 class="card-title">Changelog</h3>
+            <p class="card-text">Keep up to date with the latest API changes.</p>
+            <a href="https://strava.github.io/api/v3/changelog/" class="btn btn-primary">Read</a>
           </div>
         </div>
       </div>
