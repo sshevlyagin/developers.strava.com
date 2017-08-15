@@ -1,7 +1,6 @@
 # Developers.strava.com (β)
 
-This code contains the sources needed to generate the content of [developers.strava.com]
-(https://developers.strava.com).
+This code contains the sources needed to generate the content of [developers.strava.com](https://developers.strava.com).
 
 Specifically, this repository implements a [Hugo](https://gohugo.io) static website, whose content
 is pre-generated from a set of [Swagger](swagger.io) definitions that describe the Strava API.
