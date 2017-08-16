@@ -20,14 +20,9 @@
       "authorizationUrl": "https://www.strava.com/api/v3/oauth/authorize",
       "tokenUrl": "https://www.strava.com/api/v3/oauth/token",
       "scopes": {
-        "view_private": "modify pets in your account",
-        "write": "read your pets"
+        "view_private": "View private activities and data within privacy zones",
+        "write": "Modify activities, upload on the user’s behalf"
       }
-    },
-    "strava_internal_oauth": {
-      "type": "oauth2",
-      "flow": "password",
-      "tokenUrl": "https://www.strava.com/api/v3/oauth/internal/token"
     }
   },
   "parameters": {
