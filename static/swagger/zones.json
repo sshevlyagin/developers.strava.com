@@ -53,7 +53,7 @@
     "description": "A union type representing the time spent in a given zone.",
     "allOf": [
       {
-        "$ref": "zones.json#/ZoneRange"
+        "$ref": "./zones.json#/ZoneRange"
       },
       {
         "properties": {

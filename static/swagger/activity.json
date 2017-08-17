@@ -2,7 +2,7 @@
   "Activity": {
     "allOf": [
       {
-        "$ref": "activity.json#/SummaryActivity"
+        "$ref": "./activity.json#/SummaryActivity"
       },
       {
         "properties": {
@@ -11,10 +11,10 @@
             "description": "The description of the activity"
           },
           "photos": {
-            "$ref": "photo.json#/PhotosSummary"
+            "$ref": "./photo.json#/PhotosSummary"
           },
           "gear": {
-            "$ref": "gear.json#/SummaryGear"
+            "$ref": "./gear.json#/SummaryGear"
           },
           "calories": {
             "type": "number",
@@ -24,7 +24,7 @@
           "segment_efforts": {
             "type": "array",
             "items": {
-              "$ref": "segment_effort.json#/SegmentEffort"
+              "$ref": "./segment_effort.json#/SegmentEffort"
             }
           },
           "device_name": {
@@ -38,27 +38,27 @@
           "splits_metric": {
             "type": "array",
             "items": {
-              "$ref": "split.json#/Split"
+              "$ref": "./split.json#/Split"
             },
             "description": "The splits of this activity in metric units (for runs)"
           },
           "splits_standard": {
             "type": "array",
             "items": {
-              "$ref": "split.json#/Split"
+              "$ref": "./split.json#/Split"
             },
             "description": "The splits of this activity in imperial units (for runs)"
           },
           "laps": {
             "type": "array",
             "items": {
-              "$ref": "lap.json#/Lap"
+              "$ref": "./lap.json#/Lap"
             }
           },
           "best_efforts": {
             "type": "array",
             "items": {
-              "$ref": "segment_effort.json#/SegmentEffort"
+              "$ref": "./segment_effort.json#/SegmentEffort"
             }
           }
         }
@@ -68,7 +68,7 @@
   "SummaryActivity": {
     "allOf": [
       {
-        "$ref": "activity.json#/MetaActivity"
+        "$ref": "./activity.json#/MetaActivity"
       },
       {
         "properties": {
@@ -81,7 +81,7 @@
             "description": "The identifier of the upload that resulted in this activity"
           },
           "athlete": {
-            "$ref": "athlete.json#/MetaAthlete"
+            "$ref": "./athlete.json#/MetaAthlete"
           },
           "name": {
             "type": "string",
@@ -116,7 +116,7 @@
             "description": "The activity's lowest elevation, in meters"
           },
           "type": {
-            "$ref": "activity_type.json#/ActivityType"
+            "$ref": "./activity_type.json#/ActivityType"
           },
           "start_date": {
             "type": "string",
@@ -133,10 +133,10 @@
             "description": "The timezone of the activity"
           },
           "start_latlng": {
-            "$ref": "latlng.json#/LatLng"
+            "$ref": "./latlng.json#/LatLng"
           },
           "end_latlng": {
-            "$ref": "latlng.json#/LatLng"
+            "$ref": "./latlng.json#/LatLng"
           },
           "achievement_count": {
             "type": "integer",
@@ -164,7 +164,7 @@
             "description": "The number of Instagram and Strava photos for this activity"
           },
           "map": {
-            "$ref": "map.json#/PolylineMap"
+            "$ref": "./map.json#/PolylineMap"
           },
           "trainer": {
             "type": "boolean",

@@ -2,7 +2,7 @@
   "DetailedSegment": {
     "allOf": [
       {
-        "$ref": "segment.json#/SummarySegment"
+        "$ref": "./segment.json#/SummarySegment"
       },
       {
         "properties": {
@@ -22,7 +22,7 @@
             "description": "The segment's total elevation gain."
           },
           "map": {
-            "$ref": "map.json#/PolylineMap"
+            "$ref": "./map.json#/PolylineMap"
           },
           "effort_count": {
             "type": "integer",

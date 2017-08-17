@@ -1,5 +1,8 @@
 default:
-  skip: true
+  tasks:
+    specs:
+      - docker-compose build --no-cache
+      - docker-compose run specs /usr/share/blog/specs/java_compile.sh
   triggers:
     master:
       - dockerize

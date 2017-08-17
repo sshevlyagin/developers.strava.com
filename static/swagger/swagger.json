@@ -62,13 +62,13 @@
           "200": {
             "description": "Profile information for an athlete",
             "schema": {
-              "$ref": "athlete.json#/DetailedAthlete"
+              "$ref": "./athlete.json#/DetailedAthlete"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "fault.json#/Fault"
+              "$ref": "./fault.json#/Fault"
             }
           }
         }
@@ -103,14 +103,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "athlete.json#/SummaryAthlete"
+                "$ref": "./athlete.json#/SummaryAthlete"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "fault.json#/Fault"
+              "$ref": "./fault.json#/Fault"
             }
           }
         }
@@ -145,14 +145,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "athlete.json#/SummaryAthlete"
+                "$ref": "./athlete.json#/SummaryAthlete"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "fault.json#/Fault"
+              "$ref": "./fault.json#/Fault"
             }
           }
         }
@@ -187,14 +187,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "athlete.json#/SummaryAthlete"
+                "$ref": "./athlete.json#/SummaryAthlete"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "fault.json#/Fault"
+              "$ref": "./fault.json#/Fault"
             }
           }
         }
@@ -227,7 +227,7 @@
           "200": {
             "description": "Activity stats of the athlete",
             "schema": {
-              "$ref": "activity_stats.json#/ActivityStats"
+              "$ref": "./activity_stats.json#/ActivityStats"
             }
           },
           "default": {
