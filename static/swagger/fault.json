@@ -1,14 +1,34 @@
 {
   "Fault": {
+    "description": "Encapsulates the errors that may be returned from the API.",
+    "type": "object",
+    "properties": {
+      "errors": {
+        "type": "array",
+        "items": {
+          "$ref": "./fault.json#/Error"
+        },
+        "description": "The set of specific errors associated with this fault, if any."
+      },
+      "message": {
+        "type": "string",
+        "description": "The message of the fault."
+      }
+    }
+  },
+  "Error": {
     "type": "object",
     "properties": {
       "code": {
-        "type": "integer"
-      },
-      "message": {
+        "description": "The code associated with this error.",
         "type": "string"
       },
-      "fields": {
+      "field": {
+        "description": "The specific field or aspect of the resource associated with this error.",
+        "type": "string"
+      },
+      "resource": {
+        "description": "The type of resource associated with this error.",
         "type": "string"
       }
     }
