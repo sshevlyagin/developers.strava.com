@@ -4,3 +4,13 @@ services:
   specs:
     build:
       context: .
+      args:
+        MODE: local
+  tools:
+    stdin_open: true
+    tty: true
+    network_mode: host
+    build:
+      context: .
+      args:
+        MODE: local

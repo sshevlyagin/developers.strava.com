@@ -2,7 +2,7 @@
   "DetailedSegment": {
     "allOf": [
       {
-        "$ref": "./segment.json#/SummarySegment"
+        "$ref": "{{reference_prefix}}/segment.json#/SummarySegment"
       },
       {
         "properties": {
@@ -22,7 +22,7 @@
             "description": "The segment's total elevation gain."
           },
           "map": {
-            "$ref": "./map.json#/PolylineMap"
+            "$ref": "{{reference_prefix}}/map.json#/PolylineMap"
           },
           "effort_count": {
             "type": "integer",
@@ -85,10 +85,10 @@
         "description": "The segments's lowest elevation, in meters"
       },
       "start_latlng": {
-        "$ref": "./latlng.json#/LatLng"
+        "$ref": "{{reference_prefix}}/latlng.json#/LatLng"
       },
       "end_latlng": {
-        "$ref": "./latlng.json#/LatLng"
+        "$ref": "{{reference_prefix}}/latlng.json#/LatLng"
       },
       "climb_category": {
         "type": "integer",
@@ -113,7 +113,7 @@
         "description": "Whether this segment is private."
       },
       "athlete_pr_effort": {
-        "$ref": "./segment_effort.json#/SummarySegmentEffort"
+        "$ref": "{{reference_prefix}}/segment_effort.json#/SummarySegmentEffort"
       }
     }
   },
@@ -123,7 +123,7 @@
       "segments": {
         "type": "array",
         "items": {
-          "$ref": "./segment.json#/ExplorerSegment"
+          "$ref": "{{reference_prefix}}/segment.json#/ExplorerSegment"
         },
         "description": "The set of segments matching an explorer request"
       }
@@ -157,10 +157,10 @@
         "description": "The segment's average grade, in percents"
       },
       "start_latlng": {
-        "$ref": "./latlng.json#/LatLng"
+        "$ref": "{{reference_prefix}}/latlng.json#/LatLng"
       },
       "end_latlng": {
-        "$ref": "./latlng.json#/LatLng"
+        "$ref": "{{reference_prefix}}/latlng.json#/LatLng"
       },
       "elev_difference": {
         "type": "number",

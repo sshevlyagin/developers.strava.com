@@ -3,10 +3,10 @@
     "type": "object",
     "properties": {
       "heart_rate": {
-        "$ref": "./zones.json#/HeartRateZoneRanges"
+        "$ref": "{{reference_prefix}}/zones.json#/HeartRateZoneRanges"
       },
       "power": {
-        "$ref": "./zones.json#/PowerZoneRanges"
+        "$ref": "{{reference_prefix}}/zones.json#/PowerZoneRanges"
       }
     }
   },
@@ -18,7 +18,7 @@
         "description": "Whether the athlete has set their own custom heart rate zones"
       },
       "zones": {
-        "$ref": "./zones.json#/ZoneRanges"
+        "$ref": "{{reference_prefix}}/zones.json#/ZoneRanges"
       }
     }
   },
@@ -26,14 +26,14 @@
     "type": "object",
     "properties": {
       "zones": {
-        "$ref": "./zones.json#/ZoneRanges"
+        "$ref": "{{reference_prefix}}/zones.json#/ZoneRanges"
       }
     }
   },
   "ZoneRanges": {
     "type": "array",
     "items": {
-      "$ref": "./zones.json#/ZoneRange"
+      "$ref": "{{reference_prefix}}/zones.json#/ZoneRange"
     }
   },
   "ZoneRange": {
@@ -53,7 +53,7 @@
     "description": "A union type representing the time spent in a given zone.",
     "allOf": [
       {
-        "$ref": "./zones.json#/ZoneRange"
+        "$ref": "{{reference_prefix}}/zones.json#/ZoneRange"
       },
       {
         "properties": {

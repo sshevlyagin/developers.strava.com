@@ -3,7 +3,7 @@
     "type": "object",
     "properties": {
       "athlete": {
-        "$ref": "./athlete.json#/SummaryAthlete"
+        "$ref": "{{reference_prefix}}/athlete.json#/SummaryAthlete"
       },
       "description": {
         "type": "string",
@@ -24,7 +24,7 @@
         "description": "The unique identifier of this route"
       },
       "map": {
-        "$ref": "./map.json#/PolylineMap"
+        "$ref": "{{reference_prefix}}/map.json#/PolylineMap"
       },
       "name": {
         "type": "string",
@@ -52,7 +52,7 @@
       "segments": {
         "type": "array",
         "items": {
-          "$ref": "./segment.json#/SummarySegment"
+          "$ref": "{{reference_prefix}}/segment.json#/SummarySegment"
         },
         "description": "The segments traversed by this route"
       },

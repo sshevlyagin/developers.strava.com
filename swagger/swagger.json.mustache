@@ -62,13 +62,13 @@
           "200": {
             "description": "Profile information for an athlete",
             "schema": {
-              "$ref": "./athlete.json#/DetailedAthlete"
+              "$ref": "{{reference_prefix}}/athlete.json#/DetailedAthlete"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -103,14 +103,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./athlete.json#/SummaryAthlete"
+                "$ref": "{{reference_prefix}}/athlete.json#/SummaryAthlete"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -145,14 +145,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./athlete.json#/SummaryAthlete"
+                "$ref": "{{reference_prefix}}/athlete.json#/SummaryAthlete"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -187,14 +187,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./athlete.json#/SummaryAthlete"
+                "$ref": "{{reference_prefix}}/athlete.json#/SummaryAthlete"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -227,13 +227,13 @@
           "200": {
             "description": "Activity stats of the athlete",
             "schema": {
-              "$ref": "./activity_stats.json#/ActivityStats"
+              "$ref": "{{reference_prefix}}/activity_stats.json#/ActivityStats"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -251,13 +251,13 @@
           "200": {
             "description": "Profile information for the logged-in athlete",
             "schema": {
-              "$ref": "./athlete.json#/DetailedAthlete"
+              "$ref": "{{reference_prefix}}/athlete.json#/DetailedAthlete"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -276,7 +276,7 @@
             "description": "The athlete entity to update",
             "required": true,
             "schema": {
-              "$ref": "./athlete.json#/DetailedAthlete"
+              "$ref": "{{reference_prefix}}/athlete.json#/DetailedAthlete"
             }
 
           }
@@ -285,13 +285,13 @@
           "200": {
             "description": "Profile information for the logged-in athlete",
             "schema": {
-              "$ref": "./athlete.json#/DetailedAthlete"
+              "$ref": "{{reference_prefix}}/athlete.json#/DetailedAthlete"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -319,14 +319,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./athlete.json#/SummaryAthlete"
+                "$ref": "{{reference_prefix}}/athlete.json#/SummaryAthlete"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -354,14 +354,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./athlete.json#/SummaryAthlete"
+                "$ref": "{{reference_prefix}}/athlete.json#/SummaryAthlete"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -379,13 +379,13 @@
           "200": {
             "description": "Heart rate and power zones",
             "schema": {
-              "$ref": "./zones.json#/Zones"
+              "$ref": "{{reference_prefix}}/zones.json#/Zones"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -412,13 +412,13 @@
           "200": {
             "description": "Representation of a segment",
             "schema": {
-              "$ref": "./segment.json#/DetailedSegment"
+              "$ref": "{{reference_prefix}}/segment.json#/DetailedSegment"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -446,14 +446,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./segment.json#/SummarySegment"
+                "$ref": "{{reference_prefix}}/segment.json#/SummarySegment"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -480,13 +480,13 @@
           "200": {
             "description": "Representation of a segment",
             "schema": {
-              "$ref": "./segment.json#/DetailedSegment"
+              "$ref": "{{reference_prefix}}/segment.json#/DetailedSegment"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -564,13 +564,13 @@
           "200": {
             "description": "Representation of a segment leaderboard",
             "schema": {
-              "$ref": "./segment_leaderboard.json#/SegmentLeaderboard"
+              "$ref": "{{reference_prefix}}/segment_leaderboard.json#/SegmentLeaderboard"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -605,14 +605,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./segment_effort.json#/SegmentEffort"
+                "$ref": "{{reference_prefix}}/segment_effort.json#/SegmentEffort"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -669,13 +669,13 @@
           "200": {
             "description": "List of matching segments",
             "schema": {
-              "$ref": "./segment.json#/ExplorerResponse"
+              "$ref": "{{reference_prefix}}/segment.json#/ExplorerResponse"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -703,13 +703,13 @@
           "200": {
             "description": "Representation of a segment effort",
             "schema": {
-              "$ref": "./segment_effort.json#/SegmentEffort"
+              "$ref": "{{reference_prefix}}/segment_effort.json#/SegmentEffort"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -736,13 +736,13 @@
           "200": {
             "description": "Representation of a running race",
             "schema": {
-              "$ref": "./running_race.json#/RunningRace"
+              "$ref": "{{reference_prefix}}/running_race.json#/RunningRace"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -770,14 +770,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./running_race.json#/RunningRace"
+                "$ref": "{{reference_prefix}}/running_race.json#/RunningRace"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -810,13 +810,13 @@
           "200": {
             "description": "The activity's detailed representation",
             "schema": {
-              "$ref": "./activity.json#/Activity"
+              "$ref": "{{reference_prefix}}/activity.json#/Activity"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -837,7 +837,7 @@
             "name": "body",
             "in": "body",
             "schema": {
-              "$ref": "./activity.json#/UpdatableActivity"
+              "$ref": "{{reference_prefix}}/activity.json#/UpdatableActivity"
             }
           }
         ],
@@ -848,13 +848,13 @@
           "200": {
             "description": "The activity's detailed representation",
             "schema": {
-              "$ref": "./activity.json#/Activity"
+              "$ref": "{{reference_prefix}}/activity.json#/Activity"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -882,7 +882,7 @@
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -922,7 +922,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./activity.json#/SummaryActivity"
+                "$ref": "{{reference_prefix}}/activity.json#/SummaryActivity"
               }
             },
             "examples": {
@@ -996,7 +996,7 @@
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -1030,14 +1030,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./activity.json#/SummaryActivity"
+                "$ref": "{{reference_prefix}}/activity.json#/SummaryActivity"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -1072,14 +1072,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./activity.json#/SummaryActivity"
+                "$ref": "{{reference_prefix}}/activity.json#/SummaryActivity"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -1108,14 +1108,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./lap.json#/Lap"
+                "$ref": "{{reference_prefix}}/lap.json#/Lap"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -1144,14 +1144,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./zones.json#/ActivityZone"
+                "$ref": "{{reference_prefix}}/zones.json#/ActivityZone"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -1186,14 +1186,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./comment.json#/Comment"
+                "$ref": "{{reference_prefix}}/comment.json#/Comment"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -1228,14 +1228,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./athlete.json#/SummaryAthlete"
+                "$ref": "{{reference_prefix}}/athlete.json#/SummaryAthlete"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -1262,13 +1262,13 @@
           "200": {
             "description": "The detailed representation of a club",
             "schema": {
-              "$ref": "./club.json#/DetailedClub"
+              "$ref": "{{reference_prefix}}/club.json#/DetailedClub"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -1303,14 +1303,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./athlete.json#/SummaryAthlete"
+                "$ref": "{{reference_prefix}}/athlete.json#/SummaryAthlete"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -1345,14 +1345,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./athlete.json#/SummaryAthlete"
+                "$ref": "{{reference_prefix}}/athlete.json#/SummaryAthlete"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -1387,14 +1387,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./club.json#/ClubAnnouncement"
+                "$ref": "{{reference_prefix}}/club.json#/ClubAnnouncement"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -1429,14 +1429,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./activity.json#/SummaryActivity"
+                "$ref": "{{reference_prefix}}/activity.json#/SummaryActivity"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -1463,13 +1463,13 @@
           "200": {
             "description": "A representation of the athlete's membership in the club",
             "schema": {
-              "$ref": "./club.json#/MembershipApplication"
+              "$ref": "{{reference_prefix}}/club.json#/MembershipApplication"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -1496,13 +1496,13 @@
           "200": {
             "description": "A representation of the athlete's membership in the club",
             "schema": {
-              "$ref": "./club.json#/MembershipApplication"
+              "$ref": "{{reference_prefix}}/club.json#/MembershipApplication"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -1530,14 +1530,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./club.json#/SummaryClub"
+                "$ref": "{{reference_prefix}}/club.json#/SummaryClub"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -1564,13 +1564,13 @@
           "200": {
             "description": "A representation of the gear",
             "schema": {
-              "$ref": "./gear.json#/DetailedGear"
+              "$ref": "{{reference_prefix}}/gear.json#/DetailedGear"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -1597,13 +1597,13 @@
           "200": {
             "description": "A representation of the route",
             "schema": {
-              "$ref": "./route.json#/Route"
+              "$ref": "{{reference_prefix}}/route.json#/Route"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -1638,14 +1638,14 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "./route.json#/Route"
+                "$ref": "{{reference_prefix}}/route.json#/Route"
               }
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -1715,13 +1715,13 @@
           "201": {
             "description": "A representation of the created upload",
             "schema": {
-              "$ref": "./upload.json#/Upload"
+              "$ref": "{{reference_prefix}}/upload.json#/Upload"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
@@ -1748,13 +1748,13 @@
           "200": {
             "description": "Representation of the upload",
             "schema": {
-              "$ref": "./upload.json#/Upload"
+              "$ref": "{{reference_prefix}}/upload.json#/Upload"
             }
           },
           "default": {
             "description": "Unexpected error",
             "schema": {
-              "$ref": "./fault.json#/Fault"
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
           }
         }
