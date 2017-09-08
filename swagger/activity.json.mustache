@@ -1,5 +1,5 @@
 {
-  "Activity": {
+  "DetailedActivity": {
     "allOf": [
       {
         "$ref": "{{reference_prefix}}/activity.json#/SummaryActivity"
@@ -24,7 +24,7 @@
           "segment_efforts": {
             "type": "array",
             "items": {
-              "$ref": "{{reference_prefix}}/segment_effort.json#/SegmentEffort"
+              "$ref": "{{reference_prefix}}/segment_effort.json#/DetailedSegmentEffort"
             }
           },
           "device_name": {
@@ -58,7 +58,7 @@
           "best_efforts": {
             "type": "array",
             "items": {
-              "$ref": "{{reference_prefix}}/segment_effort.json#/SegmentEffort"
+              "$ref": "{{reference_prefix}}/segment_effort.json#/DetailedSegmentEffort"
             }
           }
         }

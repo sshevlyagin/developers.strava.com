@@ -1,4 +1,31 @@
 {
+  "DetailedGear": {
+    "allOf": [
+      {
+        "$ref": "{{reference_prefix}}/gear.json#/SummaryGear"
+      },
+      {
+        "properties": {
+          "brand_name": {
+            "type": "string",
+            "description": "The gear's brand name."
+          },
+          "model_name": {
+            "type": "string",
+            "description": "The gear's model name."
+          },
+          "frame_type": {
+            "type": "integer",
+            "description": "The gear's frame type (bike only)."
+          },
+          "description": {
+            "type": "string",
+            "description": "The gear's description."
+          }
+        }
+      }
+    ]
+  },
   "SummaryGear": {
     "type": "object",
     "properties": {
@@ -22,48 +49,6 @@
         "type": "number",
         "format": "float",
         "description": "The distance logged with this gear."
-      }
-    }
-  },
-  "DetailedGear": {
-    "type": "object",
-    "properties": {
-      "id": {
-        "type": "string",
-        "description": "The gear's unique identifier."
-      },
-      "resource_state": {
-        "type": "integer",
-        "description": "Resource state"
-      },
-      "primary": {
-        "type": "boolean",
-        "description": "Whether this gear's is the owner's default one."
-      },
-      "name": {
-        "type": "string",
-        "description": "The gear's name."
-      },
-      "distance": {
-        "type": "number",
-        "format": "float",
-        "description": "The distance logged with this gear."
-      },
-      "brand_name": {
-        "type": "string",
-        "description": "The gear's brand name."
-      },
-      "model_name": {
-        "type": "string",
-        "description": "The gear's model name."
-      },
-      "frame_type": {
-        "type": "integer",
-        "description": "The gear's frame type (bike only)."
-      },
-      "description": {
-        "type": "string",
-        "description": "The gear's description."
       }
     }
   }

@@ -1,150 +1,90 @@
 {
   "DetailedClub": {
-    "type": "object",
-    "properties": {
-      "id": {
-        "type": "integer",
-        "description": "The club's unique identifier."
+    "allOf": [
+      {
+        "$ref": "{{reference_prefix}}/club.json#/SummaryClub"
       },
-      "resource_state": {
-        "type": "integer",
-        "description": "Resource state"
-      },
-      "name": {
-        "type": "string",
-        "description": "The club's name."
-      },
-      "profile_medium": {
-        "type": "string",
-        "description": "URL to a 60x60 pixel profile picture."
-      },
-      "cover_photo": {
-        "type": "string",
-        "description": "URL to a ~1185x580 pixel cover photo."
-      },
-      "cover_photo_small": {
-        "type": "string",
-        "description": "URL to a ~360x176  pixel cover photo."
-      },
-      "sport_type": {
-        "type": "string",
-        "enum": ["cycling", "running", "triathlon", "other"]
-      },
-      "city": {
-        "type": "string",
-        "description": "The club's city."
-      },
-      "state": {
-        "type": "string",
-        "description": "The club's state or geographical region."
-      },
-      "country": {
-        "type": "string",
-        "description": "The club's country."
-      },
-      "private": {
-        "type": "boolean",
-        "description": "Whether the club is private."
-      },
-      "member_count": {
-        "type": "integer",
-        "description": "The club's member count."
-      },
-      "featured": {
-        "type": "boolean",
-        "description": "Whether the club is featured or not."
-      },
-      "verified": {
-        "type": "boolean",
-        "description": "Whether the club is verified or not."
-      },
-      "url": {
-        "type": "string",
-        "description": "The club's vanity URL."
-      },
-      "membership": {
-        "type": "string",
-        "enum": ["member", "pending"],
-        "description": "The membership status of the logged-in athlete."
-      },
-      "admin": {
-        "type": "boolean",
-        "description": "Whether the currently logged-in athlete is an administrator of this club."
-      },
-      "owner": {
-        "type": "boolean",
-        "description": "Whether the currently logged-in athlete is the owner of this club."
-      },
-      "following_count": {
-        "type": "integer",
-        "description": "The number of athletes in the club that the logged-in athlete follows."
+      {
+        "properties": {
+          "membership": {
+            "type": "string",
+            "enum": ["member", "pending"],
+            "description": "The membership status of the logged-in athlete."
+          },
+          "admin": {
+            "type": "boolean",
+            "description": "Whether the currently logged-in athlete is an administrator of this club."
+          },
+          "owner": {
+            "type": "boolean",
+            "description": "Whether the currently logged-in athlete is the owner of this club."
+          },
+          "following_count": {
+            "type": "integer",
+            "description": "The number of athletes in the club that the logged-in athlete follows."
+          }
+        }
       }
-    }
+    ]
   },
   "SummaryClub": {
-    "type": "object",
-    "properties": {
-      "id": {
-        "type": "integer",
-        "description": "The club's unique identifier."
+    "allOf": [
+      {
+        "$ref": "{{reference_prefix}}/club.json#/MetaClub"
       },
-      "resource_state": {
-        "type": "integer",
-        "description": "Resource state"
-      },
-      "name": {
-        "type": "string",
-        "description": "The club's name."
-      },
-      "profile_medium": {
-        "type": "string",
-        "description": "URL to a 60x60 pixel profile picture."
-      },
-      "cover_photo": {
-        "type": "string",
-        "description": "URL to a ~1185x580 pixel cover photo."
-      },
-      "cover_photo_small": {
-        "type": "string",
-        "description": "URL to a ~360x176  pixel cover photo."
-      },
-      "sport_type": {
-        "type": "string",
-        "enum": ["cycling", "running", "triathlon", "other"]
-      },
-      "city": {
-        "type": "string",
-        "description": "The club's city."
-      },
-      "state": {
-        "type": "string",
-        "description": "The club's state or geographical region."
-      },
-      "country": {
-        "type": "string",
-        "description": "The club's country."
-      },
-      "private": {
-        "type": "boolean",
-        "description": "Whether the club is private."
-      },
-      "member_count": {
-        "type": "integer",
-        "description": "The club's member count."
-      },
-      "featured": {
-        "type": "boolean",
-        "description": "Whether the club is featured or not."
-      },
-      "verified": {
-        "type": "boolean",
-        "description": "Whether the club is verified or not."
-      },
-      "url": {
-        "type": "string",
-        "description": "The club's vanity URL."
+      {
+        "properties": {
+          "profile_medium": {
+            "type": "string",
+            "description": "URL to a 60x60 pixel profile picture."
+          },
+          "cover_photo": {
+            "type": "string",
+            "description": "URL to a ~1185x580 pixel cover photo."
+          },
+          "cover_photo_small": {
+            "type": "string",
+            "description": "URL to a ~360x176  pixel cover photo."
+          },
+          "sport_type": {
+            "type": "string",
+            "enum": ["cycling", "running", "triathlon", "other"]
+          },
+          "city": {
+            "type": "string",
+            "description": "The club's city."
+          },
+          "state": {
+            "type": "string",
+            "description": "The club's state or geographical region."
+          },
+          "country": {
+            "type": "string",
+            "description": "The club's country."
+          },
+          "private": {
+            "type": "boolean",
+            "description": "Whether the club is private."
+          },
+          "member_count": {
+            "type": "integer",
+            "description": "The club's member count."
+          },
+          "featured": {
+            "type": "boolean",
+            "description": "Whether the club is featured or not."
+          },
+          "verified": {
+            "type": "boolean",
+            "description": "Whether the club is verified or not."
+          },
+          "url": {
+            "type": "string",
+            "description": "The club's vanity URL."
+          }
+        }
       }
-    }
+    ]
   },
   "MetaClub": {
     "type": "object",

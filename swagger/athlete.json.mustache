@@ -1,194 +1,137 @@
 {
   "DetailedAthlete": {
-    "type": "object",
-    "properties": {
-      "id": {
-        "type": "integer",
-        "description": "Unique identifier representing a specific athlete."
+    "allOf": [
+      {
+        "$ref": "{{reference_prefix}}/athlete.json#/SummaryAthlete"
       },
-      "resource_state": {
-        "type": "integer",
-        "description": "Resource state"
-      },
-      "firstname": {
-        "type": "string",
-        "description": "The athlete's first name."
-      },
-      "lastname": {
-        "type": "string",
-        "description": "The athlete's last name."
-      },
-      "profile_medium": {
-        "type": "string",
-        "description": "URL to a 62x62 pixel profile picture."
-      },
-      "profile": {
-        "type": "string",
-        "description": "URL to a 124x124 pixel profile picture."
-      },
-      "city": {
-        "type": "string",
-        "description": "The athlete's city."
-      },
-      "state": {
-        "type": "string",
-        "description": "The athlete's state or geographical region."
-      },
-      "country": {
-        "type": "string",
-        "description": "The athlete's country."
-      },
-      "sex": {
-        "type": "string",
-        "description": "The athlete's sex.",
-        "enum": ["M", "F"]
-      },
-      "friend": {
-        "type": "string",
-        "description": "Whether the currently logged-in athlete follows this athlete.",
-        "enum": ["pending", "accepted", "blocked"]
-      },
-      "follower": {
-        "type": "string",
-        "description": "Whether this athlete follows the currently logged-in athlete.",
-        "enum": ["pending", "accepted", "blocked"]
-      },
-      "premium": {
-        "type": "boolean",
-        "description": "The athlete's premium status."
-      },
-      "created_at": {
-        "type": "string",
-        "format": "date-time",
-        "description": "The time at which the athlete was created."
-      },
-      "updated_at": {
-        "type": "string",
-        "format": "date-time",
-        "description": "The time at which the athlete was last updated."
-      },
-      "follower_count": {
-        "type": "integer",
-        "description": "The athlete's follower count."
-      },
-      "friend_count": {
-        "type": "integer",
-        "description": "The athlete's friend count."
-      },
-      "mutual_friend_count": {
-        "type": "integer",
-        "description": "The number or athletes mutually followed by this athlete and the currently logged-in athlete."
-      },
-      "measurement_preference": {
-        "type": "string",
-        "enum": ["feet", "meters"],
-        "description": "The athlete's preferred unit system."
-      },
-      "email": {
-        "type": "string",
-        "description": "The athlete's email address."
-      },
-      "ftp": {
-        "type": "integer",
-        "description": "The athlete's FTP (Functional Threshold Power)."
-      },
-      "weight": {
-        "type": "number",
-        "format": "float",
-        "description": "The athlete's weight."
-      },
-      "clubs": {
-        "type": "array",
-        "items": {
-          "$ref": "{{reference_prefix}}/club.json#/SummaryClub"
-        },
-        "description": "The athlete's clubs."
-      },
-      "bikes": {
-        "type": "array",
-        "items": {
-          "$ref": "{{reference_prefix}}/gear.json#/SummaryGear"
-        },
-        "description": "The athlete's bikes."
-      },
-      "shoes": {
-        "type": "array",
-        "items": {
-          "$ref": "{{reference_prefix}}/gear.json#/SummaryGear"
-        },
-        "description": "The athlete's shoes."
+      {
+        "properties": {
+          "follower_count": {
+            "type": "integer",
+            "description": "The athlete's follower count."
+          },
+          "friend_count": {
+            "type": "integer",
+            "description": "The athlete's friend count."
+          },
+          "mutual_friend_count": {
+            "type": "integer",
+            "description": "The number or athletes mutually followed by this athlete and the currently logged-in athlete."
+          },
+          "measurement_preference": {
+            "type": "string",
+            "enum": ["feet", "meters"],
+            "description": "The athlete's preferred unit system."
+          },
+          "email": {
+            "type": "string",
+            "description": "The athlete's email address."
+          },
+          "ftp": {
+            "type": "integer",
+            "description": "The athlete's FTP (Functional Threshold Power)."
+          },
+          "weight": {
+            "type": "number",
+            "format": "float",
+            "description": "The athlete's weight."
+          },
+          "clubs": {
+            "type": "array",
+            "items": {
+              "$ref": "{{reference_prefix}}/club.json#/SummaryClub"
+            },
+            "description": "The athlete's clubs."
+          },
+          "bikes": {
+            "type": "array",
+            "items": {
+              "$ref": "{{reference_prefix}}/gear.json#/SummaryGear"
+            },
+            "description": "The athlete's bikes."
+          },
+          "shoes": {
+            "type": "array",
+            "items": {
+              "$ref": "{{reference_prefix}}/gear.json#/SummaryGear"
+            },
+            "description": "The athlete's shoes."
+          }
+        }
       }
-    }
+    ]
   },
   "SummaryAthlete": {
-    "type": "object",
-    "properties": {
-      "id": {
-        "type": "integer",
-        "description": "Unique identifier representing a specific athlete."
+    "allOf": [
+      {
+        "$ref": "{{reference_prefix}}/athlete.json#/MetaAthlete"
       },
-      "resource_state": {
-        "type": "integer",
-        "description": "Resource state"
-      },
-      "firstname": {
-        "type": "string",
-        "description": "The athlete's first name."
-      },
-      "lastname": {
-        "type": "string",
-        "description": "The athlete's last name."
-      },
-      "profile_medium": {
-        "type": "string",
-        "description": "URL to a 62x62 pixel profile picture."
-      },
-      "profile": {
-        "type": "string",
-        "description": "URL to a 124x124 pixel profile picture."
-      },
-      "city": {
-        "type": "string",
-        "description": "The athlete's city."
-      },
-      "state": {
-        "type": "string",
-        "description": "The athlete's state or geographical region."
-      },
-      "country": {
-        "type": "string",
-        "description": "The athlete's country."
-      },
-      "sex": {
-        "type": "string",
-        "description": "The athlete's sex.",
-        "enum": ["M", "F"]
-      },
-      "friend": {
-        "type": "string",
-        "description": "Whether the currently logged-in athlete follows this athlete.",
-        "enum": ["pending", "accepted", "blocked"]
-      },
-      "follower": {
-        "type": "string",
-        "description": "Whether this athlete follows the currently logged-in athlete.",
-        "enum": ["pending", "accepted", "blocked"]
-      },
-      "premium": {
-        "type": "boolean",
-        "description": "The athlete's premium status."
-      },
-      "created_at": {
-        "type": "string",
-        "format": "date-time",
-        "description": "The time at which the athlete was created."
-      },
-      "updated_at": {
-        "type": "string",
-        "format": "date-time",
-        "description": "The time at which the athlete was last updated."
+      {
+        "properties": {
+          "resource_state": {
+            "type": "integer",
+            "description": "Resource state"
+          },
+          "firstname": {
+            "type": "string",
+            "description": "The athlete's first name."
+          },
+          "lastname": {
+            "type": "string",
+            "description": "The athlete's last name."
+          },
+          "profile_medium": {
+            "type": "string",
+            "description": "URL to a 62x62 pixel profile picture."
+          },
+          "profile": {
+            "type": "string",
+            "description": "URL to a 124x124 pixel profile picture."
+          },
+          "city": {
+            "type": "string",
+            "description": "The athlete's city."
+          },
+          "state": {
+            "type": "string",
+            "description": "The athlete's state or geographical region."
+          },
+          "country": {
+            "type": "string",
+            "description": "The athlete's country."
+          },
+          "sex": {
+            "type": "string",
+            "description": "The athlete's sex.",
+            "enum": ["M", "F"]
+          },
+          "friend": {
+            "type": "string",
+            "description": "Whether the currently logged-in athlete follows this athlete.",
+            "enum": ["pending", "accepted", "blocked"]
+          },
+          "follower": {
+            "type": "string",
+            "description": "Whether this athlete follows the currently logged-in athlete.",
+            "enum": ["pending", "accepted", "blocked"]
+          },
+          "premium": {
+            "type": "boolean",
+            "description": "The athlete's premium status."
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The time at which the athlete was created."
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The time at which the athlete was last updated."
+          }
+        }
       }
-    }
+    ]
   },
   "MetaAthlete": {
     "type": "object",
