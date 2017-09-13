@@ -70,6 +70,13 @@
 <script>
 window.onload = function() {
 
+  var link = document.createElement('a');
+  link.setAttribute('href', window.location.href);
+  if (link.protocol == 'http:' && link.hostname == 'developers.strava.com') {
+    link.protocol = 'https:';
+    window.location = link.href;
+  }
+  
   // Build a system
   // To run the authentication locally, change the oauth2RedirectUrl
   // to 'http://localhost:1313/oauth2-redirect/'
