@@ -20,11 +20,17 @@
       "authorizationUrl": "https://www.strava.com/api/v3/oauth/authorize",
       "tokenUrl": "https://www.strava.com/api/v3/oauth/token",
       "scopes": {
+        "public": "default, private activities are not returned, privacy zones are respected in stream requests",
         "view_private": "View private activities and data within privacy zones",
         "write": "Modify activities, upload on the user’s behalf"
       }
     }
   },
+  "security": [
+    {
+      "strava_oauth": ["public"]
+    }
+  ],
   "parameters": {
     "page": {
       "name": "page",

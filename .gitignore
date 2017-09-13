@@ -5,3 +5,4 @@ public/
 content/docs/reference.html
 static/README.md
 generated/
+static/swagger/*.json

@@ -1,3 +1,4 @@
+<!-- HTML for static distribution bundle build -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,15 +9,15 @@
   <style>
     html
     {
-        box-sizing: border-box;
-        overflow: -moz-scrollbars-vertical;
-        overflow-y: scroll;
+      box-sizing: border-box;
+      overflow: -moz-scrollbars-vertical;
+      overflow-y: scroll;
     }
     *,
     *:before,
     *:after
     {
-        box-sizing: inherit;
+      box-sizing: inherit;
     }
 
     body {
@@ -68,10 +69,15 @@
 <script src="/playground/swagger-ui-standalone-preset.js"> </script>
 <script>
 window.onload = function() {
+
   // Build a system
+  // To run the authentication locally, change the oauth2RedirectUrl
+  // to 'http://localhost:1313/oauth2-redirect/'
   const ui = SwaggerUIBundle({
     url: "/swagger/swagger.json",
     dom_id: '#swagger-ui',
+    deepLinking: true,
+    oauth2RedirectUrl: 'https://developers.strava.com/oauth2-redirect/',
     presets: [
       SwaggerUIBundle.presets.apis,
       SwaggerUIStandalonePreset
