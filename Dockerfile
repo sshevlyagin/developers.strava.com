@@ -10,8 +10,8 @@ RUN apt-get -qq update \
 ## Swagger
 
 RUN mkdir -p /usr/bin
-ADD https://oss.sonatype.org/content/repositories/releases/io/swagger/swagger-codegen-cli/2.2.2/swagger-codegen-cli-2.2.2.jar \
-  /usr/bin/swagger-codegen-cli-2.2.2.jar
+ADD https://oss.sonatype.org/content/repositories/releases/io/swagger/swagger-codegen-cli/2.2.3/swagger-codegen-cli-2.2.3.jar \
+  /usr/bin/swagger-codegen-cli-2.2.3.jar
 
 ## Hugo
 
@@ -46,7 +46,7 @@ RUN scripts/generate_swagger_spec.sh $MODE static/swagger
 # may refer to production models and endpoints, whereas this container may be
 # built locally
 RUN scripts/generate_swagger_spec.sh local /tmp/swagger
-RUN java -classpath codegen/target/static-html-codegen-1.0.0.jar:/usr/bin/swagger-codegen-cli-2.2.2.jar \
+RUN java -classpath codegen/target/static-html-codegen-1.0.0.jar:/usr/bin/swagger-codegen-cli-2.2.3.jar \
   io.swagger.codegen.Codegen \
   --input-spec /tmp/swagger/swagger.json \
   --config config/strava-html.json \
@@ -56,11 +56,4 @@ RUN java -classpath codegen/target/static-html-codegen-1.0.0.jar:/usr/bin/swagge
 # Final command configuration
 ENV HUGO_PORT 1313
 EXPOSE ${HUGO_PORT}
-CMD hugo server \
-  --port=${HUGO_PORT} \
-  --baseURL=http://localhost:${HUGO_PORT} \
-  --bind=0.0.0.0 \
-  --watch=false \
-  --destination=/usr/share/generated \
-  --disableRSS \
-  --disableSitemap
+ENTRYPOINT ["./app"]

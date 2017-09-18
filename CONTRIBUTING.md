@@ -33,6 +33,10 @@ To propose a change:
 - Wait for a review from an administrator of the repository.
 - If any further change is requested, please submit them as fixup commits in Git, e.g. `git commit --fixup HEAD`. Read more about fixup commits [here](https://robots.thoughtbot.com/autosquashing-git-commits). Unless required, avoid rebasing your branch onto `master` during the review.
 
-If you've made changes to the API specification, we have a small test suite that validates that the changes are not breaking — namely by generating a Java client and compiling this client. You can (and should) run the test locally:
+If you've made changes to the API specification, we have a small test suite that can validate that your changes do not break existing functionality. The suite generates a Java client, compiles the client, and runs some simple tests. You can (and should) run the test locally:
 
-    $ docker-compose build --no-cache && docker-compose run specs /usr/share/blog/specs/java_compile.sh
+    $ docker-compose build --no-cache
+    $ docker-compose run specs compile
+    $ docker-compose run specs test <your_access_token>
+
+You can find your access token on your [API settings](https://www.strava.com/settings/api) page ('Your Access Token'). Please use your own token to run these tests.
