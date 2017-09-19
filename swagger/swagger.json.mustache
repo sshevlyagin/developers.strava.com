@@ -1765,6 +1765,197 @@
           }
         }
       }
+    },
+    "/activities/{id}/streams": {
+      "get": {
+        "operationId": "getActivityStreams",
+        "summary": "Get Activity Streams",
+        "description": "Returns the set of streams for an activity",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the activity.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "keys",
+            "in": "query",
+            "description": "The types of streams to return.",
+            "required": true,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "time",
+                "distance",
+                "latlng",
+                "altitude",
+                "velocity_smooth",
+                "heartrate",
+                "cadence",
+                "watts",
+                "temp",
+                "moving",
+                "grade_smooth"
+              ]
+            },
+            "collectionFormat": "csv",
+            "minItems": 1
+          },
+          {
+            "name": "key_by_type",
+            "in": "query",
+            "description": "Requests the server to key stream objects by type in the response – must be set to true",
+            "type": "boolean",
+            "required": true,
+            "default": true
+          }
+        ],
+        "tags": [
+          "Streams"
+        ],
+        "responses": {
+          "200": {
+            "description": "The set of requested streams",
+            "schema": {
+              "$ref": "{{reference_prefix}}/stream.json#/StreamSet"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/segment_efforts/{id}/streams": {
+      "get": {
+        "operationId": "getSegmentEffortStreams",
+        "summary": "Get Segment Effort Streams",
+        "description": "Returns the set of streams for a segment effort",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the segment effort.",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "keys",
+            "in": "query",
+            "description": "The types of streams to return.",
+            "required": true,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "time",
+                "distance",
+                "latlng",
+                "altitude",
+                "velocity_smooth",
+                "heartrate",
+                "cadence",
+                "watts",
+                "temp",
+                "moving",
+                "grade_smooth"
+              ]
+            },
+            "collectionFormat": "csv",
+            "minItems": 1
+          },
+          {
+            "name": "key_by_type",
+            "in": "query",
+            "description": "Requests the server to key stream objects by type in the response – must be set to true",
+            "type": "boolean",
+            "required": true,
+            "default": true
+          }
+        ],
+        "tags": [
+          "Streams"
+        ],
+        "responses": {
+          "200": {
+            "description": "The set of requested streams",
+            "schema": {
+              "$ref": "{{reference_prefix}}/stream.json#/StreamSet"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
+            }
+          }
+        }
+      }
+    },
+    "/segments/{id}/streams": {
+      "get": {
+        "operationId": "getSegmentStreams",
+        "summary": "Get Segment Streams",
+        "description": "Returns the set of streams for a segment",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier of the segment.",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "keys",
+            "in": "query",
+            "description": "The types of streams to return.",
+            "required": true,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "distance",
+                "latlng",
+                "altitude"
+              ]
+            },
+            "collectionFormat": "csv",
+            "minItems": 1
+          },
+          {
+            "name": "key_by_type",
+            "in": "query",
+            "description": "Requests the server to key stream objects by type in the response – must be set to true",
+            "type": "boolean",
+            "required": true,
+            "default": true
+          }
+        ],
+        "tags": [
+          "Streams"
+        ],
+        "responses": {
+          "200": {
+            "description": "The set of requested streams",
+            "schema": {
+              "$ref": "{{reference_prefix}}/stream.json#/StreamSet"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "{{reference_prefix}}/fault.json#/Fault"
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -11,7 +11,8 @@ public abstract class ApiTest {
   @BeforeClass
   public static void buildApiClient() {
     apiClient = new ApiClient(new String[]{"strava_oauth"});
-    apiClient.setAccessToken(System.getProperty("accessToken"));
+    String accessToken = System.getProperty("accessToken");
+    apiClient.setAccessToken(accessToken);
   }
 
   public static ApiClient getApiClient() {

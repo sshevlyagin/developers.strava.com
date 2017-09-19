@@ -1,13 +1,11 @@
 package com.strava.api.v3.services;
 
-import static org.junit.Assert.assertEquals;
-
-import com.strava.api.v3.ApiClient;
 import com.strava.api.v3.models.DetailedAthlete;
-
 import io.reactivex.observers.TestObserver;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class AthletesApiTest extends ApiTest {
 
