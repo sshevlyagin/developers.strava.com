@@ -25,6 +25,27 @@ We rely on [Docker](https://www.docker.com/) to build and run the site. Download
 
 ## Generation of code and documentation
 
+### Local development
+
+To deploy the site locally you'll need to install [Hugo](https://gohugo.io/). On macOS:
+
+    $ brew install hugo
+    
+Or on windows:
+
+    $ choco install hugo -confirm
+
+There is a bash script to generate the local configuration, client code, and documentation; the script takes two arguments:
+
+1. The path to your Swagger CLI jar; on macOS, the path should be something like `/usr/local/Cellar/swagger-codegen/2.2.3/libexec/swagger-codegen-cli.jar`; you can also use Homebrew to find it: `$(brew --prefix swagger-codegen)/libexec/swagger-codegen-cli.jar`. 
+2. The port you would like to use to run your local server, e.g. `3124`
+
+The following command executes successfully on a typical macOS setup, serving your local branch's version of [developers.strava.com](https://developers.strava.com) on port 3124:
+
+    $ scripts/deploy_local_changes.sh $(brew --prefix swagger-codegen)/libexec/swagger-codegen-cli.jar 3124
+    
+You can then point your browser to [localhost:3124](localhost:3124) to see your current branch on a local server. If the deploy script doesn't work for you, continue to the next sections; they describe in more detail each one of the script's processes. 
+
 ### [Optional] Generating the local configuration
 
 The OpenAPI specification maintained in this repository, along with the various models it refers to, are not checked-in in their final form. In some cases, such as in production, we want to publish a specification where all files use absolute `$ref` values. In other cases, such as when you want to work on the spec locally, files may use relative references.
