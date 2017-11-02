@@ -103,31 +103,6 @@
       }
     }
   },
-  "ClubAnnouncement": {
-    "type": "object",
-    "properties": {
-      "id": {
-        "type": "integer",
-        "description": "The unique identifier of this announcement."
-      },
-      "club_id": {
-        "type": "integer",
-        "description": "The unique identifier of the club this announcements was made in."
-      },
-      "athlete": {
-        "$ref": "{{reference_prefix}}/athlete.json#/SummaryAthlete"
-      },
-      "created_at": {
-        "type": "string",
-        "format": "date-time",
-        "description": "The time at which this announcement was created."
-      },
-      "message": {
-        "type": "string",
-        "description": "The content of this announcement"
-      }
-    }
-  },
   "MembershipApplication": {
     "type": "object",
     "properties": {
