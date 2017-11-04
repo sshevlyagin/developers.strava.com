@@ -21,7 +21,7 @@ public class StreamsApiTest extends ApiTest {
   public void testGetActivityStream() throws InterruptedException {
     CollectionFormats.CSVParams keys = new CollectionFormats.CSVParams("altitude", "distance");
     TestObserver<StreamSet> observer = streamsApi.getActivityStreams(
-        1196721622, keys, true).test().await();
+        1196721622L, keys, true).test().await();
     observer.assertNoErrors();
     StreamSet streams = observer.values().get(0);
     assertNotNull(streams.getDistance());
@@ -32,7 +32,7 @@ public class StreamsApiTest extends ApiTest {
   public void testGetSegmentStream() throws InterruptedException {
     CollectionFormats.CSVParams keys = new CollectionFormats.CSVParams("altitude", "latlng");
     TestObserver<StreamSet> observer = streamsApi.getSegmentStreams(
-        8109834, keys, true).test().await();
+        8109834L, keys, true).test().await();
     observer.assertNoErrors();
     StreamSet streams = observer.values().get(0);
     assertNotNull(streams.getLatlng());
