@@ -4,4 +4,4 @@ set -e
 BASEDIR=$(dirname "$0")
 
 $BASEDIR/generate.sh $1 $BASEDIR/smoke/generated
-mvn -X -DaccessToken=$2 --file $BASEDIR/smoke/pom.xml test
+mvn -e -DaccessToken=$2 --file $BASEDIR/smoke/pom.xml test
