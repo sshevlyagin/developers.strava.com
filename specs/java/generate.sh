@@ -10,8 +10,8 @@ TMP_DIR="$( mktemp -d 2>/dev/null || mktemp -d -t 'mytmpdir' )"
 API_SPECIFICATION=$TMP_DIR/apispec
 $BASEDIR/../../scripts/generate_swagger_spec.sh local $API_SPECIFICATION
 
-java -classpath $1 \
-  io.swagger.codegen.Codegen \
+java -jar $1 \
+  generate \
   --input-spec $API_SPECIFICATION/swagger.json \
   --config $BASEDIR/config.json \
   --lang java \

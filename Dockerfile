@@ -47,7 +47,8 @@ RUN scripts/generate_swagger_spec.sh $MODE static/swagger
 # built locally
 RUN scripts/generate_swagger_spec.sh local /tmp/swagger
 RUN java -classpath codegen/target/static-html-codegen-1.0.0.jar:/usr/bin/swagger-codegen-cli-2.2.3.jar \
-  io.swagger.codegen.Codegen \
+  io.swagger.codegen.SwaggerCodegen \
+  generate \
   --input-spec /tmp/swagger/swagger.json \
   --config config/strava-html.json \
   --lang strava-html \
