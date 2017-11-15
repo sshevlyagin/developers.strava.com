@@ -29,6 +29,7 @@ To propose a change:
 - Make the changes needed and commit them to your fork. Make reference to the issue you worked on in your commit message. We don't enforce strict guidelines for title and commit messages but consider:
   - Presenting the context of your change
   - Explaining the caveats of your implementation, if any
+  - If your change makes a functional impact to any models or endpoints, create a [changelog entry](https://github.com/strava/developers.com/content/docs/changelog.md)
 - Open a GitHub Pull Request targeting the `master` branch.
 - Wait for a review from an administrator of the repository.
 - If any further change is requested, please submit them as fixup commits in Git, e.g. `git commit --fixup HEAD`. Read more about fixup commits [here](https://robots.thoughtbot.com/autosquashing-git-commits). Unless required, avoid rebasing your branch onto `master` during the review.
