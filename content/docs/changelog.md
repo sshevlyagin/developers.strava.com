@@ -2,6 +2,9 @@
 
 The Strava mobile applications and 3rd party applications use the V3 API to communicate with Strava. The Strava API Team strives to provide a stable interface with clear documentation. It is important to maintain a clear record of functional changes to the V3 API; the changelog is the official external record of these changes.
 
+###### November 9, 2017
++ Update Premium weight classes so that `0_124` is the bottom bucket for the [segment leaderboard](../reference/#api-Segments-getLeaderboardBySegmentId) endpoint. 
+
 ###### October 19, 2017
 + Add expanded Premium weight classes and age groups to [segment leaderboard](../reference/#api-Segments-getLeaderboardBySegmentId) endpoint.
 
