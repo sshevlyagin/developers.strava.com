@@ -16,11 +16,4 @@ public class AthletesApiTest extends ApiTest {
     athletesApi = getApiClient().createService(AthletesApi.class);
   }
 
-  @Test
-  public void testGetAthleteById() throws InterruptedException {
-    TestObserver<DetailedAthlete> observer = athletesApi.getAthleteById(136697).test().await();
-    observer.assertNoErrors();
-    DetailedAthlete athlete = observer.values().get(0);
-    assertEquals("Julien", athlete.getFirstname());
-  }
 }

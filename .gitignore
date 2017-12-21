@@ -7,3 +7,4 @@ static/README.md
 generated/
 static/swagger/*.json
 specs/java/smoke/generated
+content/docs/.swagger-codegen/

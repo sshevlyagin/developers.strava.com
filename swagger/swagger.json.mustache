@@ -47,165 +47,6 @@
     }
   },
   "paths": {
-    "/athletes/{id}": {
-      "get": {
-        "operationId": "getAthleteById",
-        "summary": "Get Athlete",
-        "description": "Returns an athlete for a given identifier.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "The identifier of the athlete.",
-            "required": true,
-            "type": "integer"
-          }
-        ],
-        "tags": [
-          "Athletes"
-        ],
-        "responses": {
-          "200": {
-            "description": "Profile information for an athlete",
-            "schema": {
-              "$ref": "{{reference_prefix}}/athlete.json#/DetailedAthlete"
-            }
-          },
-          "default": {
-            "description": "Unexpected error",
-            "schema": {
-              "$ref": "{{reference_prefix}}/fault.json#/Fault"
-            }
-          }
-        }
-      }
-    },
-    "/athletes/{id}/friends": {
-      "get": {
-        "operationId": "getAthleteFriends",
-        "summary": "List Athlete Friends",
-        "description": "Returns a given athlete's friends.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "The identifier of the athlete.",
-            "required": true,
-            "type": "integer"
-          },
-          {
-            "$ref": "#/parameters/page"
-          },
-          {
-            "$ref": "#/parameters/perPage"
-          }
-        ],
-        "tags": [
-          "Athletes"
-        ],
-        "responses": {
-          "200": {
-            "description": "Array of athletes",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "{{reference_prefix}}/athlete.json#/SummaryAthlete"
-              }
-            }
-          },
-          "default": {
-            "description": "Unexpected error",
-            "schema": {
-              "$ref": "{{reference_prefix}}/fault.json#/Fault"
-            }
-          }
-        }
-      }
-    },
-    "/athletes/{id}/followers": {
-      "get": {
-        "operationId": "getAthleteFollowers",
-        "summary": "List Athlete Followers",
-        "description": "Returns the list of a given athlete's followers.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "The identifier of the athlete.",
-            "required": true,
-            "type": "integer"
-          },
-          {
-            "$ref": "#/parameters/page"
-          },
-          {
-            "$ref": "#/parameters/perPage"
-          }
-        ],
-        "tags": [
-          "Athletes"
-        ],
-        "responses": {
-          "200": {
-            "description": "Array of athletes",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "{{reference_prefix}}/athlete.json#/SummaryAthlete"
-              }
-            }
-          },
-          "default": {
-            "description": "Unexpected error",
-            "schema": {
-              "$ref": "{{reference_prefix}}/fault.json#/Fault"
-            }
-          }
-        }
-      }
-    },
-    "/athletes/{id}/both-following": {
-      "get": {
-        "operationId": "getCommonFriends",
-        "summary": "List Common Friends",
-        "description": "Returns a list of the common friends between a given athlete and the logged-in athlete.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "The identifier of the athlete.",
-            "required": true,
-            "type": "integer"
-          },
-          {
-            "$ref": "#/parameters/page"
-          },
-          {
-            "$ref": "#/parameters/perPage"
-          }
-        ],
-        "tags": [
-          "Athletes"
-        ],
-        "responses": {
-          "200": {
-            "description": "Array of athletes",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "{{reference_prefix}}/athlete.json#/SummaryAthlete"
-              }
-            }
-          },
-          "default": {
-            "description": "Unexpected error",
-            "schema": {
-              "$ref": "{{reference_prefix}}/fault.json#/Fault"
-            }
-          }
-        }
-      }
-    },
     "/athletes/{id}/stats": {
       "get": {
         "operationId": "getStats",
@@ -590,7 +431,7 @@
       "get": {
         "operationId": "getEffortsBySegmentId",
         "summary": "List Segment Efforts",
-        "description": "Returns a list of the efforts for a segment referenced by its id.",
+        "description": "Returns a set of the authenticated athlete's segment efforts for a given segment.",
         "parameters": [
           {
             "name": "id",
@@ -695,7 +536,7 @@
       "get": {
         "operationId": "getSegmentEffortById",
         "summary": "Get Segment Effort",
-        "description": "Returns a segment effort for a given identifier.",
+        "description": "Returns a segment effort from an activity that is owned by the authenticated athlete.",
         "parameters": [
           {
             "name": "id",
@@ -797,7 +638,7 @@
       "get": {
         "operationId": "getActivityById",
         "summary": "Get Activity",
-        "description": "Returns an activity for a given identifier.",
+        "description": "Returns an activity that is owned by the authenticated athlete.",
         "parameters": [
           {
             "name": "id",
@@ -1004,90 +845,6 @@
                   "suffer_score": null
                 }
               ]
-            }
-          },
-          "default": {
-            "description": "Unexpected error",
-            "schema": {
-              "$ref": "{{reference_prefix}}/fault.json#/Fault"
-            }
-          }
-        }
-      }
-    },
-    "/activities/following": {
-      "get": {
-        "operationId": "getLoggedInAthleteFriendsActivities",
-        "summary": "List Friends' Activities",
-        "description": "Returns the activities of the friends of the logged-in athlete.",
-        "parameters": [
-          {
-            "name": "before",
-            "in": "query",
-            "description": "An epoch timestamp to use for filtering activities that have taken place before a certain time",
-            "type": "integer"
-          },
-          {
-            "$ref": "#/parameters/page"
-          },
-          {
-            "$ref": "#/parameters/perPage"
-          }
-        ],
-        "tags": [
-          "Activities"
-        ],
-        "responses": {
-          "200": {
-            "description": "Friends activities",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "{{reference_prefix}}/activity.json#/SummaryActivity"
-              }
-            }
-          },
-          "default": {
-            "description": "Unexpected error",
-            "schema": {
-              "$ref": "{{reference_prefix}}/fault.json#/Fault"
-            }
-          }
-        }
-      }
-    },
-    "/activities/{id}/related": {
-      "get": {
-        "operationId": "getRelatedActivities",
-        "summary": "List Related Activities",
-        "description": "Returns a list of activities related to another using specific identifier.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "The unique identifier of the activity.",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "$ref": "#/parameters/page"
-          },
-          {
-            "$ref": "#/parameters/perPage"
-          }
-        ],
-        "tags": [
-          "Activities"
-        ],
-        "responses": {
-          "200": {
-            "description": "Related activities",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "{{reference_prefix}}/activity.json#/SummaryActivity"
-              }
             }
           },
           "default": {
@@ -1848,7 +1605,7 @@
       "get": {
         "operationId": "getSegmentEffortStreams",
         "summary": "Get Segment Effort Streams",
-        "description": "Returns the set of streams for a segment effort",
+        "description": "Returns a set of streams for a segment effort completed by the authenticated athlete.",
         "parameters": [
           {
             "name": "id",
