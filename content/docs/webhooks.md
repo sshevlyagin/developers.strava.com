@@ -106,7 +106,7 @@ These are the fields that are returned with webhook events:
       </span>
     </td>
     <td>
-        The push subscription ID that is receiving this event.
+        The time that the event occurred.
     </td>
   </tr>
 </table>
