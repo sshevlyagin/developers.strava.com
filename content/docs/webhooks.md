@@ -70,7 +70,7 @@ These are the fields that are returned with webhook events:
       </span>
     </td>
     <td>
-        For update events, keys can contain "title," "type," and "privacy." Empty for delete and create events.
+        For update events, keys can contain "title," "type," and "private," which is always "true" or "false." Empty for delete and create events.
     </td>
   </tr>
   <tr>
