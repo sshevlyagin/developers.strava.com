@@ -2,6 +2,12 @@
 
 The Strava mobile applications and 3rd party applications use the V3 API to communicate with Strava. The Strava API Team strives to provide a stable interface with clear documentation. It is important to maintain a clear record of functional changes to the V3 API; the changelog is the official external record of these changes.
 
+###### January 17, 2018
++ Athlete-specific data requires authentication.
+
+###### January 16, 2018
++ Release the [activity-update webhook events](../webhooks) system.
+
 ###### November 9, 2017
 + Update Premium weight classes so that `0_124` is the bottom bucket for the [segment leaderboard](../reference/#api-Segments-getLeaderboardBySegmentId) endpoint. 
 
