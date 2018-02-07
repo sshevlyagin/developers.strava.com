@@ -92,7 +92,8 @@ This will generate the documentation in the location expected by the site.
 
 ### Troubleshooting
 
-Failing to escape JSON-restricted characters can prevent documentation from compiling. If the documentation compiles successfully for master but not for your local branch, double-check that you escaped all [JSON-restricted characters](http://www.json.org/) on your local branch.
+- It has been observed that the site does not render all the pages with Hugo version v0.35.x. To solve the issue, you may have to download a certain version of Hugo (v0.32.2) manually and install it. You can find the instructions to install a specific version of Hugo [here.](https://github.com/gohugoio/hugo/blob/master/docs/content/getting-started/installing.md) All the Hugo versions can be downloaded from [here.](https://github.com/gohugoio/hugo/releases)
+- Failing to escape JSON-restricted characters can prevent documentation from compiling. If the documentation compiles successfully for master but not for your local branch, double-check that you escaped all [JSON-restricted characters](http://www.json.org/) on your local branch.
 
 ## Content & Organization
 

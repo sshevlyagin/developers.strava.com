@@ -16,5 +16,4 @@ hugo server --port=$2 \
   --baseURL=http://localhost:$2 \
   --bind 0.0.0.0 \
   --watch=true \
-  --disableRSS \
-  --disableSitemap
+  --disableKinds=RSS,sitemap
