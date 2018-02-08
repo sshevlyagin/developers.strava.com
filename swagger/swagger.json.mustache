@@ -641,35 +641,6 @@
             }
           }
         }
-      },
-      "delete": {
-        "operationId": "deleteActivityById",
-        "summary": "Delete Activity",
-        "description": "Deletes an activity for a given identifier",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "The identifier of the activity.",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          }
-        ],
-        "tags": [
-          "Activities"
-        ],
-        "responses": {
-          "204": {
-            "description": "No content"
-          },
-          "default": {
-            "description": "Unexpected error",
-            "schema": {
-              "$ref": "{{reference_prefix}}/fault.json#/Fault"
-            }
-          }
-        }
       }
     },
     "/athlete/activities": {
