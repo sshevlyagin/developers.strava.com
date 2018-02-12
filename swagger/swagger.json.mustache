@@ -424,6 +424,65 @@
               "items": {
                 "$ref": "{{reference_prefix}}/segment_effort.json#/DetailedSegmentEffort"
               }
+            },
+            "examples": {
+                "application/json": [
+                    {
+                         "id": 123456789,
+                         "resource_state": 2,
+                         "name": "Alpe d'Huez",
+                         "activity": {
+                         	"id": 1234567890,
+                            "resource_state": 1
+                         },
+                         "athlete": {
+                         	"id": 123445678689,
+                            "resource_state": 1
+                         },
+                         "elapsed_time": 1657,
+                         "moving_time": 1642,
+                         "start_date": "2007-09-15T08:15:29Z",
+                         "start_date_local": "2007-09-15T09:15:29Z",
+                         "distance": 6148.92,
+                         "start_index": 1102,
+                         "end_index": 1366,
+                         "device_watts": false,
+                         "average_watts": 220.2,
+                         "segment": {
+                            "id": 788127,
+                            "resource_state": 2,
+                            "name": "Alpe d'Huez",
+                            "activity_type": "Ride",
+                            "distance": 6297.46,
+                            "average_grade": 4.8,
+                            "maximum_grade": 16.3,
+                            "elevation_high": 416,
+                            "elevation_low": 104.6,
+                            "start_latlng": [
+                                52.98501000581467,
+                                 -3.1869720001197367
+                            ],
+                            "end_latlng": [
+                                53.02204074375785,
+                                -3.2039630001245737
+                            ],
+                            "start_latitude": 82.9858888581467,
+                            "start_longitude": -3.1869788881197367,
+                            "end_latitude": 43.022040343380785,
+                            "end_longitude": -13.2039639991245737,
+                            "climb_category": 2,
+                            "city": "Le Bourg D'Oisans",
+                            "state": "RA",
+                            "country": "France",
+                            "private": false,
+                            "hazardous": false,
+                            "starred": false
+                         },
+                         "kom_rank": null,
+                         "pr_rank": null,
+                         "achievements": []
+                    }
+                ]
             }
           },
           "default": {
@@ -524,6 +583,66 @@
             "description": "Representation of a segment effort",
             "schema": {
               "$ref": "{{reference_prefix}}/segment_effort.json#/DetailedSegmentEffort"
+            },
+            "examples": {
+                "application/json": {
+                    "id": 1234556789,
+                    "resource_state": 3,
+                    "name": "Alpe d'Huez",
+                    "activity": {
+                        "id": 3454504,
+                        "resource_state": 1
+                    },
+                    "athlete": {
+                        "id": 54321,
+                        "resource_state": 1
+                    },
+                    "elapsed_time": 381,
+                    "moving_time": 340,
+                    "start_date": "2018-02-12T16:12:41Z",
+                    "start_date_local": "2018-02-12T08:12:41Z",
+                    "distance": 83,
+                    "start_index": 65,
+                    "end_index": 83,
+                    "segment": {
+                        "id": 63450,
+                        "resource_state": 2,
+                        "name": "Alpe d'Huez",
+                        "activity_type": "Run",
+                        "distance": 780.35,
+                        "average_grade": -0.5,
+                        "maximum_grade": 0,
+                        "elevation_high": 21,
+                        "elevation_low": 17.2,
+                        "start_latlng": [
+                            37.808407654682,
+                            -122.426682919323
+                        ],
+                        "end_latlng": [
+                            37.808297909724,
+                            -122.421324329674
+                        ],
+                        "start_latitude": 37.80840654682,
+                        "start_longitude": -122.45682919323,
+                        "end_latitude": 37.80829000979624,
+                        "end_longitude": -122.42000324329674,
+                        "climb_category": 0,
+                        "city": "San Francisco",
+                        "state": "CA",
+                        "country": "United States",
+                        "private": false,
+                        "hazardous": false,
+                        "starred": false
+                    },
+                    "kom_rank": null,
+                    "pr_rank": null,
+                    "achievements": [],
+                    "athlete_segment_stats": {
+                        "pr_elapsed_time": 212,
+                        "pr_date": "2015-02-12",
+                        "effort_count": 149
+                    }
+                }
             }
           },
           "default": {
@@ -1435,6 +1554,18 @@
             "description": "A representation of the gear",
             "schema": {
               "$ref": "{{reference_prefix}}/gear.json#/DetailedGear"
+            },
+            "examples": {
+                "application/json": {
+                    "id": "b1231",
+                    "primary": false,
+                    "resource_state": 3,
+                    "distance": 388206,
+                    "brand_name": "BMC",
+                    "model_name": "Teammachine",
+                    "frame_type": 3,
+                    "description": "My Bike"
+                }
             }
           },
           "default": {
