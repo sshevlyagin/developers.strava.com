@@ -74,13 +74,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Activity stats of the athlete",
+            "description": "Activity stats of the athlete.",
             "schema": {
               "$ref": "{{reference_prefix}}/activity_stats.json#/ActivityStats"
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -91,20 +91,69 @@
     "/athlete": {
       "get": {
         "operationId": "getLoggedInAthlete",
-        "summary": "Get Logged-in Athlete",
-        "description": "Returns the currently logged-in athlete",
+        "summary": "Get Authenticated Athlete",
+        "description": "Returns the currently authenticated athlete.",
         "tags": [
           "Athletes"
         ],
         "responses": {
           "200": {
-            "description": "Profile information for the logged-in athlete",
+            "description": "Profile information for the authenticated athlete.",
             "schema": {
               "$ref": "{{reference_prefix}}/athlete.json#/DetailedAthlete"
+            },
+            "examples": {
+                "application/json": {
+                     "id": 1234567890987654321,
+                     "username": "marianne_v",
+                     "resource_state": 3,
+                     "firstname": "Marianne",
+                     "lastname": "V.",
+                     "city": "San Francisco",
+                     "state": "CA",
+                     "country": "US",
+                     "sex": "F",
+                     "premium": true,
+                     "created_at": "2017-11-14T02:30:05Z",
+                     "updated_at": "2018-02-06T19:32:20Z",
+                     "badge_type_id": 4,
+                     "profile_medium": "https://xxxxxx.cloudfront.net/pictures/athletes/123456789/123456789/2/medium.jpg",
+                     "profile": "https://xxxxx.cloudfront.net/pictures/athletes/123456789/123456789/2/large.jpg",
+                     "friend": null,
+                     "follower": null,
+                     "email": "mv@abc.com",
+                     "follower_count": 5,
+                     "friend_count": 5,
+                     "mutual_friend_count": 0,
+                     "athlete_type": 1,
+                     "date_preference": "%m/%d/%Y",
+                     "measurement_preference": "feet",
+                     "clubs": [],
+                     "ftp": null,
+                     "weight": 0,
+                     "bikes": [
+                     {
+                        "id": "b12345678987655",
+                        "primary": true,
+                        "name": "EMC",
+                        "resource_state": 2,
+                        "distance": 0
+                     }
+                     ],
+                     "shoes": [
+                     {
+                        "id": "g12345678987655",
+                        "primary": true,
+                        "name": "adidas",
+                        "resource_state": 2,
+                        "distance": 4904
+                     }
+                     ]
+                }
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -114,7 +163,7 @@
       "put": {
         "operationId": "updateLoggedInAthlete",
         "summary": "Update Athlete",
-        "description": "Update the currently logged-in athlete",
+        "description": "Update the currently authenticated athlete.",
         "tags": [
           "Athletes"
         ],
@@ -122,7 +171,7 @@
           {
             "name": "body",
             "in": "body",
-            "description": "The athlete entity to update",
+            "description": "The athlete entity to update.",
             "required": true,
             "schema": {
               "$ref": "{{reference_prefix}}/athlete.json#/DetailedAthlete"
@@ -131,13 +180,62 @@
         ],
         "responses": {
           "200": {
-            "description": "Profile information for the logged-in athlete",
+            "description": "Profile information for the authenticated athlete.",
             "schema": {
               "$ref": "{{reference_prefix}}/athlete.json#/DetailedAthlete"
+            },
+            "examples": {
+                "application/json": {
+                    "id": 12345678987655098765444,
+                    "username": "marianne_v",
+                    "resource_state": 3,
+                    "firstname": "Marianne",
+                    "lastname": "V.",
+                    "city": "San Francisco",
+                    "state": "CA",
+                    "country": "US",
+                    "sex": "F",
+                    "premium": true,
+                    "created_at": "2017-11-14T02:30:05Z",
+                    "updated_at": "2018-02-06T19:32:20Z",
+                    "badge_type_id": 4,
+                    "profile_medium": "https://xxxxxx.cloudfront.net/pictures/athletes/1234567898765509876/1234567898765509876/2/medium.jpg",
+                    "profile": "https://xxxxx.cloudfront.net/pictures/athletes/1234567898765509876/1234567898765509876/2/large.jpg",
+                    "friend": null,
+                    "follower": null,
+                    "email": "mv@abc.com",
+                    "follower_count": 5,
+                    "friend_count": 5,
+                    "mutual_friend_count": 0,
+                    "athlete_type": 1,
+                    "date_preference": "%m/%d/%Y",
+                    "measurement_preference": "feet",
+                    "clubs": [],
+                    "ftp": null,
+                    "weight": 0,
+                    "bikes": [
+                    {
+                        "id": "b1234567898765509876",
+                        "primary": true,
+                        "name": "EMC",
+                        "resource_state": 2,
+                        "distance": 0
+                    }
+                    ],
+                    "shoes": [
+                    {
+                       "id": "g1234567898765509876",
+                       "primary": true,
+                       "name": "adidas",
+                       "resource_state": 2,
+                       "distance": 4904
+                    }
+                    ]
+                }
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -149,19 +247,19 @@
       "get": {
         "operationId": "getLoggedInAthleteZones",
         "summary": "Get Zones",
-        "description": "Returns the the logged-in athlete's heart rate and power zones.",
+        "description": "Returns the the authenticated athlete's heart rate and power zones.",
         "tags": [
           "Athletes"
         ],
         "responses": {
           "200": {
-            "description": "Heart rate and power zones",
+            "description": "Heart rate and power zones.",
             "schema": {
               "$ref": "{{reference_prefix}}/zones.json#/Zones"
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -189,13 +287,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Representation of a segment",
+            "description": "Representation of a segment.",
             "schema": {
               "$ref": "{{reference_prefix}}/segment.json#/DetailedSegment"
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -207,7 +305,7 @@
       "get": {
         "operationId": "getLoggedInAthleteStarredSegments",
         "summary": "List Starred Segments",
-        "description": "Returns a list of the segments starred by logged-in athlete.",
+        "description": "Returns a list of the segments starred by authenticated athlete.",
         "parameters": [
           {
             "$ref": "#/parameters/page"
@@ -221,7 +319,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Representation of a segment",
+            "description": "Representation of a segment.",
             "schema": {
               "type": "array",
               "items": {
@@ -230,7 +328,7 @@
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -258,13 +356,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Representation of a segment",
+            "description": "Representation of a segment.",
             "schema": {
               "$ref": "{{reference_prefix}}/segment.json#/DetailedSegment"
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -289,7 +387,7 @@
           {
             "name": "gender",
             "in": "query",
-            "description": "Enables filtering of entries by a given gender",
+            "description": "Enables filtering of entries by a given gender.",
             "type": "string",
             "enum": [
               "M",
@@ -299,7 +397,7 @@
           {
             "name": "age_group",
             "in": "query",
-            "description": "Enables filtering of entries by a given age-group",
+            "description": "Enables filtering of entries by a given age-group.",
             "type": "string",
             "enum": [
               "0_19",
@@ -316,7 +414,7 @@
           {
             "name": "weight_class",
             "in": "query",
-            "description": "Enables filtering of entries by a given weight class",
+            "description": "Enables filtering of entries by a given weight class.",
             "type": "string",
             "enum": [
               "0_124",
@@ -340,20 +438,20 @@
           {
             "name": "following",
             "in": "query",
-            "description": "Enables filtering of entries by the friends of the logged-in athlete",
+            "description": "Enables filtering of entries by the friends of the authenticated athlete.",
             "type": "boolean"
           },
           {
             "name": "club_id",
             "in": "query",
-            "description": "Enables filtering of entries by the membership of a given clu",
+            "description": "Enables filtering of entries by the membership of a given clu.",
             "type": "integer",
             "format": "int64"
           },
           {
             "name": "date_range",
             "in": "query",
-            "description": "Enables filtering of entries by a given date range",
+            "description": "Enables filtering of entries by a given date range.",
             "type": "string",
             "enum": [
               "this_year",
@@ -379,13 +477,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Representation of a segment leaderboard",
+            "description": "Representation of a segment leaderboard.",
             "schema": {
               "$ref": "{{reference_prefix}}/segment_leaderboard.json#/SegmentLeaderboard"
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -418,7 +516,7 @@
         ],
         "responses": {
           "200": {
-            "description": "List of segment efforts",
+            "description": "List of segment efforts.",
             "schema": {
               "type": "array",
               "items": {
@@ -486,7 +584,7 @@
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -498,12 +596,12 @@
       "get": {
         "operationId": "exploreSegments",
         "summary": "Explore segments",
-        "description": "Returns the segments matching a specified query",
+        "description": "Returns the segments matching a specified query.",
         "parameters": [
           {
             "name": "bounds",
             "in": "query",
-            "description": "The geographical boundaries of the search",
+            "description": "The geographical boundaries of the search.",
             "required": true,
             "type": "array",
             "items": {
@@ -517,7 +615,7 @@
           {
             "name": "activity_type",
             "in": "query",
-            "description": "The activity of the segments",
+            "description": "The activity of the segments.",
             "type": "string",
             "enum": [
               "running",
@@ -527,7 +625,7 @@
           {
             "name": "min_cat",
             "in": "query",
-            "description": "The minimum category of the segment's (for climbs)",
+            "description": "The minimum category of the segment's (for climbs).",
             "type": "integer",
             "minimum": 0,
             "maximum": 5
@@ -535,7 +633,7 @@
           {
             "name": "max_cat",
             "in": "query",
-            "description": "The maximum category of the segment's (for climbs)",
+            "description": "The maximum category of the segment's (for climbs).",
             "type": "integer",
             "minimum": 0,
             "maximum": 5
@@ -546,13 +644,13 @@
         ],
         "responses": {
           "200": {
-            "description": "List of matching segments",
+            "description": "List of matching segments.",
             "schema": {
               "$ref": "{{reference_prefix}}/segment.json#/ExplorerResponse"
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -580,7 +678,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Representation of a segment effort",
+            "description": "Representation of a segment effort.",
             "schema": {
               "$ref": "{{reference_prefix}}/segment_effort.json#/DetailedSegmentEffort"
             },
@@ -646,7 +744,7 @@
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -673,13 +771,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Representation of a running race",
+            "description": "Representation of a running race.",
             "schema": {
               "$ref": "{{reference_prefix}}/running_race.json#/RunningRace"
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -691,12 +789,12 @@
       "get": {
         "operationId": "getRunningRaces",
         "summary": "List Running Races",
-        "description": "Returns a list running races based on a set of search criterias.",
+        "description": "Returns a list running races based on a set of search criteria.",
         "parameters": [
           {
             "name": "year",
             "in": "query",
-            "description": "Filters the list by a given year",
+            "description": "Filters the list by a given year.",
             "type": "integer"
           }
         ],
@@ -705,7 +803,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Representation of a list of running race",
+            "description": "Representation of a list of running race.",
             "schema": {
               "type": "array",
               "items": {
@@ -714,7 +812,7 @@
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -739,7 +837,7 @@
           {
             "name": "include_all_efforts",
             "in": "query",
-            "description": "Whether all segments efforts should be included in the response",
+            "description": "Whether all segments efforts should be included in the response.",
             "type": "boolean"
           }
         ],
@@ -748,13 +846,13 @@
         ],
         "responses": {
           "200": {
-            "description": "The activity's detailed representation",
+            "description": "The activity's detailed representation.",
             "schema": {
               "$ref": "{{reference_prefix}}/activity.json#/DetailedActivity"
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -764,7 +862,7 @@
       "put": {
         "operationId": "updateActivityById",
         "summary": "Update Activity",
-        "description": "Updates an activity for a given identifier",
+        "description": "Updates an activity for a given identifier.",
         "parameters": [
           {
             "name": "id",
@@ -787,13 +885,13 @@
         ],
         "responses": {
           "200": {
-            "description": "The activity's detailed representation",
+            "description": "The activity's detailed representation.",
             "schema": {
               "$ref": "{{reference_prefix}}/activity.json#/DetailedActivity"
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -810,13 +908,13 @@
           {
             "name": "before",
             "in": "query",
-            "description": "An epoch timestamp to use for filtering activities that have taken place before a certain time",
+            "description": "An epoch timestamp to use for filtering activities that have taken place before a certain time.",
             "type": "integer"
           },
           {
             "name": "after",
             "in": "query",
-            "description": "An epoch timestamp to use for filtering activities that have taken place after a certain time",
+            "description": "An epoch timestamp to use for filtering activities that have taken place after a certain time.",
             "type": "integer"
           },
           {
@@ -831,7 +929,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Activities of the athlete",
+            "description": "Activities of the athlete.",
             "schema": {
               "type": "array",
               "items": {
@@ -907,7 +1005,7 @@
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -935,7 +1033,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Activity Laps",
+            "description": "Activity Laps.",
             "schema": {
               "type": "array",
               "items": {
@@ -944,7 +1042,7 @@
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -971,7 +1069,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Activity Zones",
+            "description": "Activity Zones.",
             "schema": {
               "type": "array",
               "items": {
@@ -980,7 +1078,7 @@
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -1014,7 +1112,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Comments",
+            "description": "Comments.",
             "schema": {
               "type": "array",
               "items": {
@@ -1023,7 +1121,7 @@
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -1056,7 +1154,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Comments",
+            "description": "Comments.",
             "schema": {
               "type": "array",
               "items": {
@@ -1065,7 +1163,7 @@
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -1092,7 +1190,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The detailed representation of a club",
+            "description": "The detailed representation of a club.",
             "schema": {
               "$ref": "{{reference_prefix}}/club.json#/DetailedClub"
             },
@@ -1126,7 +1224,7 @@
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -1159,7 +1257,7 @@
         ],
         "responses": {
           "200": {
-            "description": "A list of summary athlete representations",
+            "description": "A list of summary athlete representations.",
             "schema": {
               "type": "array",
               "items": {
@@ -1193,7 +1291,7 @@
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -1226,7 +1324,7 @@
         ],
         "responses": {
           "200": {
-            "description": "A list of summary athlete representations",
+            "description": "A list of summary athlete representations.",
             "schema": {
               "type": "array",
               "items": {
@@ -1258,7 +1356,7 @@
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -1291,7 +1389,7 @@
         ],
         "responses": {
           "200": {
-            "description": "A list of activities",
+            "description": "A list of activities.",
             "schema": {
               "type": "array",
               "items": {
@@ -1388,7 +1486,7 @@
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -1400,7 +1498,7 @@
       "post": {
         "operationId": "joinClubById",
         "summary": "Join Club",
-        "description": "Adds the logged-in athlete to the club's membership.",
+        "description": "Adds the authenticated athlete to the club's membership.",
         "parameters": [
           {
             "name": "id",
@@ -1415,7 +1513,7 @@
         ],
         "responses": {
           "200": {
-            "description": "A representation of the athlete's membership in the club",
+            "description": "A representation of the athlete's membership in the club.",
             "schema": {
               "$ref": "{{reference_prefix}}/club.json#/MembershipApplication"
             },
@@ -1428,7 +1526,7 @@
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -1440,7 +1538,7 @@
       "post": {
         "operationId": "leaveClubById",
         "summary": "Leave Club",
-        "description": "Removes the logged-in athlete from the club's membership.",
+        "description": "Removes the authenticated athlete from the club's membership.",
         "parameters": [
           {
             "name": "id",
@@ -1455,7 +1553,7 @@
         ],
         "responses": {
           "200": {
-            "description": "A representation of the athlete's membership in the club",
+            "description": "A representation of the athlete's membership in the club.",
             "schema": {
               "$ref": "{{reference_prefix}}/club.json#/MembershipApplication"
             },
@@ -1467,7 +1565,7 @@
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -1479,7 +1577,7 @@
       "get": {
         "operationId": "getLoggedInAthleteClubs",
         "summary": "List Athlete Clubs",
-        "description": "Returns a list of the clubs whose membership includes the logged-in athlete.",
+        "description": "Returns a list of the clubs whose membership includes the authenticated athlete.",
         "parameters": [
           {
             "$ref": "#/parameters/page"
@@ -1493,7 +1591,7 @@
         ],
         "responses": {
           "200": {
-            "description": "A list of summary club representations",
+            "description": "A list of summary club representations.",
             "schema": {
               "type": "array",
               "items": {
@@ -1524,7 +1622,7 @@
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -1551,7 +1649,7 @@
         ],
         "responses": {
           "200": {
-            "description": "A representation of the gear",
+            "description": "A representation of the gear.",
             "schema": {
               "$ref": "{{reference_prefix}}/gear.json#/DetailedGear"
             },
@@ -1564,12 +1662,12 @@
                     "brand_name": "BMC",
                     "model_name": "Teammachine",
                     "frame_type": 3,
-                    "description": "My Bike"
+                    "description": "My Bike."
                 }
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -1596,13 +1694,13 @@
         ],
         "responses": {
           "200": {
-            "description": "A representation of the route",
+            "description": "A representation of the route.",
             "schema": {
               "$ref": "{{reference_prefix}}/route.json#/Route"
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -1635,7 +1733,7 @@
         ],
         "responses": {
           "200": {
-            "description": "A representation of the route",
+            "description": "A representation of the route.",
             "schema": {
               "type": "array",
               "items": {
@@ -1644,7 +1742,7 @@
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -1665,7 +1763,7 @@
             "name": "file",
             "in": "formData",
             "type": "file",
-            "description": "The uploaded file"
+            "description": "The uploaded file."
           },
           {
             "name": "name",
@@ -1723,13 +1821,13 @@
         ],
         "responses": {
           "201": {
-            "description": "A representation of the created upload",
+            "description": "A representation of the created upload.",
             "schema": {
               "$ref": "{{reference_prefix}}/upload.json#/Upload"
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -1757,13 +1855,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Representation of the upload",
+            "description": "Representation of the upload.",
             "schema": {
               "$ref": "{{reference_prefix}}/upload.json#/Upload"
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -1775,7 +1873,7 @@
       "get": {
         "operationId": "getActivityStreams",
         "summary": "Get Activity Streams",
-        "description": "Returns the set of streams for an activity",
+        "description": "Returns the set of streams for an activity.",
         "parameters": [
           {
             "name": "id",
@@ -1813,7 +1911,7 @@
           {
             "name": "key_by_type",
             "in": "query",
-            "description": "Requests the server to key stream objects by type in the response – must be set to true",
+            "description": "Requests the server to key stream objects by type in the response – must be set to true.",
             "type": "boolean",
             "required": true,
             "default": true
@@ -1824,13 +1922,13 @@
         ],
         "responses": {
           "200": {
-            "description": "The set of requested streams",
+            "description": "The set of requested streams.",
             "schema": {
               "$ref": "{{reference_prefix}}/stream.json#/StreamSet"
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -1880,7 +1978,7 @@
           {
             "name": "key_by_type",
             "in": "query",
-            "description": "Requests the server to key stream objects by type in the response – must be set to true",
+            "description": "Requests the server to key stream objects by type in the response – must be set to true.",
             "type": "boolean",
             "required": true,
             "default": true
@@ -1891,13 +1989,13 @@
         ],
         "responses": {
           "200": {
-            "description": "The set of requested streams",
+            "description": "The set of requested streams.",
             "schema": {
               "$ref": "{{reference_prefix}}/stream.json#/StreamSet"
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
@@ -1909,7 +2007,7 @@
       "get": {
         "operationId": "getSegmentStreams",
         "summary": "Get Segment Streams",
-        "description": "Returns the set of streams for a segment",
+        "description": "Returns the set of streams for a segment.",
         "parameters": [
           {
             "name": "id",
@@ -1939,7 +2037,7 @@
           {
             "name": "key_by_type",
             "in": "query",
-            "description": "Requests the server to key stream objects by type in the response – must be set to true",
+            "description": "Requests the server to key stream objects by type in the response – must be set to true.",
             "type": "boolean",
             "required": true,
             "default": true
@@ -1950,13 +2048,13 @@
         ],
         "responses": {
           "200": {
-            "description": "The set of requested streams",
+            "description": "The set of requested streams.",
             "schema": {
               "$ref": "{{reference_prefix}}/stream.json#/StreamSet"
             }
           },
           "default": {
-            "description": "Unexpected error",
+            "description": "Unexpected error.",
             "schema": {
               "$ref": "{{reference_prefix}}/fault.json#/Fault"
             }
