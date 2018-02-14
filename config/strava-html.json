@@ -12,5 +12,6 @@
   "modelPackage": "com.strava.api.v3.models",
   "apiPackage": "com.strava.api.v3.services",
 	"packageName": "com.strava.api.v3",
-	"artifactVersion": "3.0.0"
+	"artifactVersion": "3.0.0",
+  "test": "test"
 }
