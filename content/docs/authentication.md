@@ -22,7 +22,7 @@ The access token represents the granting of access of a user to an application. 
 
 ## Request access
 
-To initiate the flow, redirect the user to Strava’s authorization page, https://www.strava.com/oauth/authorize. The page will prompt the user to consent access of your application to their data while providing basic information about what is being asked.
+To initiate the flow, redirect the user to Strava’s authorization page, `GET https://www.strava.com/oauth/authorize`. The page will prompt the user to consent access of your application to their data while providing basic information about what is being asked.
 
 <table class="parameters">
   <tr>
@@ -113,7 +113,7 @@ Strava will respond to the authorization request by redirecting the user agent t
 
 On success, a `code` parameter will be included in the query string. If access is denied, `error=access_denied` will be included in the query string. In both cases, if provided, the `state` parameter will also be included.
 
-If the user accepts the request to share access to their Strava data, Strava will redirect back to `redirect_uri` with the authorization code. The application must now exchange the temporary authorization code for an access token, using its client ID and client secret. The endpoint is `https://www.strava.com/oauth/token`.
+If the user accepts the request to share access to their Strava data, Strava will redirect back to `redirect_uri` with the authorization code. The application must now exchange the temporary authorization code for an access token, using its client ID and client secret. The endpoint is `POST https://www.strava.com/oauth/token`.
 
 <table class="parameters">
   <tr>
@@ -169,7 +169,7 @@ Applications should check for a 401 Unauthorized response. Access for those toke
 
 Allows an application to revoke its access to an athlete’s data. This will invalidate all access tokens associated with the ‘athlete,application’ pair used to create the token. The application will be removed from the Athlete Settings page on Strava. All requests made using invalidated tokens will receive a 401 Unauthorized response.
 
-The endpoint is `https://www.strava.com/oauth/deauthorize`.
+The endpoint is `POST https://www.strava.com/oauth/deauthorize`.
 
 <table class="parameters">
   <tr>
