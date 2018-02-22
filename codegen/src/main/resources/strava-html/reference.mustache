@@ -51,7 +51,11 @@ type = "reference"
               <div id="api-_">
                 <h2 id="welcome-to-apidoc">API and SDK Reference</h2>
                 {{#version}}
-                  <div class="app-desc">Version: {{{version}}}</div>
+                  <div class="app-desc">
+                    You can find general information about the API <a href="/docs">here</a>.
+                    All requests to the Strava API require <a href="/docs/authentication">authentication</a>.
+                    We have a couple of standalone pages with additional information about our <a href="/docs/webhooks">webhooks</a> and <a href="/docs/uploads">activity uploads</a> endpoints.
+                  </div>
                 {{/version}}
                 <hr>
                 <p class="marked">{{appDescription}}</p>

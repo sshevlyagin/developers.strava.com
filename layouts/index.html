@@ -1,126 +1,90 @@
 {{ partial "header.html" . }}
-  <div class="hero">
-    <div class="jumbotron">
-      <div class="container">
-        <div class='display-3'>
-          <p>Strava athletes upload millions of activities every day</p>
-          <h2>Our open API and this rich data set yield diverse opportunities for developers, from creating new hardware to augmenting the Strava experience.</h2>
-        </div>
-      </div>
+<div class="container">
+  <div class="row p-3">
+    <div class="col text-center">
+      <h1>The Strava API</h1>
+    </div>
+    <div class="w-100"></div>
+    <div class="col">
+      Strava athletes upload millions of activities every day. Our open API and this rich data set yield diverse opportunities for developers, from creating new hardware to augmenting the Strava experience.
+    <br/><br/>
+      The Strava V3 API is a publicly available interface that allows developers to access Strava data.
+      The interface is stable and used by the Strava mobile apps.
+      However, we occasionally make major changes to improve performance and enhance our features.
+      See the <a href="/docs/changelog">changelog</a> for more details.
     </div>
   </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-block">
-            <h3 class="card-title">Documentation</h3>
-            <p class="card-text">Access the documentation.</p>
-            <a href="/docs/reference" class="btn btn-primary">Learn</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-block">
-            <h3 class="card-title">Playground</h3>
-            <p class="card-text">Try the API the easy way.</p>
-            <a href="/playground" class="btn btn-primary">Explore</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-block">
-            <h3 class="card-title">Your App</h3>
-            <p class="card-text">Register or edit the details of your app.</p>
-            <a href="https://www.strava.com/settings/api" class="btn btn-primary">Create/Manage</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-block">
-            <h3 class="card-title">Activity Webhook Events</h3>
-            <p class="card-text">Receive real-time activity updates.</p>
-            <a href="/docs/webhooks" class="btn btn-primary">Upgrade</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-8">
-        <div class="card">
-          <div class="card-block">
-            <h3 class="card-title">Agreement and Brand Guidelines</h3>
-            <p class="card-text">To use the Strava API, you need to comply with the Strava API Agreement and the Brand Guidelines. Mandatory logos, linking and attribution rules can also be found in the guidelines.</p>
-            <a href="https://www.strava.com/legal/api" class="btn btn-primary">Agreement</a> <a href="/guidelines" class="btn btn-primary">Guidelines</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-block">
-            <h3 class="card-title">App Directory</h3>
-            <p class="card-text">See what other apps developers have built.</p>
-            <a href="https://www.strava.com/apps" class="btn btn-primary">Browse</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-block">
-            <h3 class="card-title">@StravaEng</h3>
-            <p class="card-text">Read what we're up to or join the team.</p>
-            <a href="https://medium.com/strava-engineering" class="btn btn-primary">Blog</a> <a href="https://www.strava.com/careers" class="btn btn-primary">Careers</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-block">
-            <h3 class="card-title">Mailing List</h3>
-            <p class="card-text">Talk to other Strava developers.</p>
-            <a href="https://groups.google.com/forum/#!forum/strava-api" class="btn btn-primary">Join</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-block">
-            <h3 class="card-title">Changelog</h3>
-            <p class="card-text">Keep up to date with the latest API changes.</p>
-            <a href="/docs/changelog" class="btn btn-primary">Read</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-block">
-            <h3 class="card-title">Old Docs</h3>
-            <p class="card-text">In case you can't find something that hasn't been moved over yet. (β)</p>
-            <a href="https://strava.github.io/api/" class="btn btn-primary">Find</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-block">
-            <h3 class="card-title">Rate Limiting</h3>
-            <p class="card-text">Understand the rules for usage.</p>
-            <a href="/docs/rate-limiting" class="btn btn-primary">Review</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-block">
-            <h3 class="card-title">Uploads API</h3>
-            <p class="card-text">Understand the rules for usage.</p>
-            <a href="/docs/uploads" class="btn btn-primary">Know</a>
-          </div>
+  <div class="row p-3">
+    <div class="col">
+      <a href="https://strava.com/settings/api" class="btn btn-primary btn-block">Create & Manage Your App</a>
+    </div>
+    <div class="col">
+      <a href="/docs/reference" class="btn btn-secondary btn-block">API Docs</a>
+    </div>
+    <div class="col">
+      <a href="/playground" class="btn btn-secondary btn-block">Explore the API Playground</a>
+    </div>
+    <div class="col">
+      <a href="https://github.com/strava/developers.strava.com/#client-code" class="btn btn-secondary btn-block">Libraries</a>
+    </div>
+  </div>
+
+
+  <div class="hero">
+    <div class="jumbotron">
+      <div class="row">
+        <div class="col text-center">
+          <h2>Strava Apps</h2>
+          <p class="left">Thousands of amazing developers from all over the world are making apps for Strava. <br/>
+            Far more athletes are using those apps to augment their Strava experience.  <br/>
+            There’s an app for everyone, from those that let you dive deep into the nerdiest of performance data, to an app that helps you make a friend in your neighborhood who runs the same pace as you.
+          </p>
+          <a href="https://www.strava.com/apps" class="btn btn-secondary">View the App Directory</a>
         </div>
       </div>
     </div>
   </div>
 
+
+  <div class="row p-3" style="background-color:#e5e5e5">
+    <div class="col-md-4">
+      <h2>Agreement & Brand Guidelines</h2>
+      <p>
+        To use the Strava API, you need to comply with the Strava API Agreement and our Brand Guidelines.
+        Mandatory logos, linking, and attribution rules can also be found in the guidelines.
+      </p>
+      <p>
+        <a href="https://www.strava.com/legal/api">Strava API Agreement</a>
+      </p>
+      <p>
+        <a href="/guidelines">Strava Brand Guidelines</a>
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h2>Strava Engineering</h2>
+      <p>
+        Learn more about the Strava Engineering Team and all the cool things we're working on.
+      </p>
+      <p>
+        <a href="https://medium.com/strava-engineering">Strava Engineering Blog</a>
+      </p>
+      <p>
+        <a href="https://boards.greenhouse.io/strava">Careers at Strava</a>
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h2>Mailing List</h2>
+      <p>
+        Join the Strava API discussion group to ask questions and hear from other API developers.
+      </p>
+      <p>
+        <a href="https://groups.google.com/forum/#!forum/strava-api">Join the Strava Developer Group</a>
+      </p>
+      <p>
+        <a href="mailto:api@strava.com">Email API Support</a>
+      </p>
+    </div>
+  </div>
 </div>
+
 {{ partial "footer.html" . }}

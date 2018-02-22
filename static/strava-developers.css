@@ -75,13 +75,9 @@ table.parameters td:first-child {
   font-size: 12px;
 }
 
-.card {
-  margin-bottom: 15px;
-}
-
-.btn-primary {
-    background-color: #fc4c02;
-    border-color: #fc4c02;
+.btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  background-color: #fc4c02;
+  border-color: #fc4c02;
 }
 
 .hero {
