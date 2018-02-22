@@ -331,24 +331,23 @@ These are the required request parameters to delete a webhook events subscriptio
 
 <table class="parameters">
   <tr>
-    <tr>
-     <td width="200px">
-         <span class="parameter-name">id</span>
-       <br>
-       <span class="parameter-description">
-         required integer
-       </span>
-     </td>
-     <td>
-         Push subscription ID
-     </td>
-   </tr>
+    <td width="200px">
+      <span class="parameter-name">id</span>
+      <br>
+      <span class="parameter-description">
+        required integer, in path
+      </span>
+    </td>
+    <td>
+      Push subscription ID
+    </td>
+  </tr>
   <tr>
     <td width="200px">
         <span class="parameter-name">client_id</span>
       <br>
       <span class="parameter-description">
-        required integer
+        required integer, in form data
       </span>
     </td>
     <td>
@@ -360,7 +359,7 @@ These are the required request parameters to delete a webhook events subscriptio
       <span class="parameter-name">client_secret</span>
       <br>
       <span class="parameter-description">
-        required string
+        required string, in form data
       </span>
     </td>
     <td>
@@ -369,4 +368,14 @@ These are the required request parameters to delete a webhook events subscriptio
   </tr>
 </table>
 
+This must be a DELETE request to the following URL, where `id` is the push subscription ID, which you can retrieve by following the instructions to view a subscription above:
+
+    $ https://api.strava.com/api/v3/push_subscriptions/id
+
 You will receive a 204 No Content if the delete is successful. Otherwise, an error will be returned containing the reason for a failure.
+
+###### Example Request
+
+    $ curl -X DELETE https://api.strava.com/api/v3/push_subscriptions/12345 \
+        -d client_id=5 \
+        -d client_secret=7b2946535949ae70f015d696d8ac602830ece412
