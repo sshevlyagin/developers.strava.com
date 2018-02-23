@@ -1,4 +1,4 @@
-# Developers.strava.com (β)
+# developers.strava.com
 
 This code contains the sources needed to generate the content of [developers.strava.com](https://developers.strava.com).
 
