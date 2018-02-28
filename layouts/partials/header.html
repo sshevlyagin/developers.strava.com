@@ -13,7 +13,7 @@
     <link href="/bootstrap.min.css" rel="stylesheet">
     <link href="/tether.min.css" rel="stylesheet">
     <link href="/strava-developers.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Code+Pro|Roboto+Slab|Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Code+Pro" rel="stylesheet">
     {{ if isset .Params "styles" }}{{ range .Params.styles }}<link rel="stylesheet" href="{{ printf "/%s" .}}">{{ end }}{{ end }}
   </head>
 
@@ -21,7 +21,7 @@
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
       <div class='container'>
         <a class="navbar-brand" href="/">
-          <span class='strava-logo'><img src="/images/strava_logo_nav.png"></span> | Developers
+          <span class='strava-logo'><img src="/images/strava_logo_nav.png" alt="Strava"></span> <span class='strava-subbranding'>Developers</span>
         </a>
       </div>
     </nav>
