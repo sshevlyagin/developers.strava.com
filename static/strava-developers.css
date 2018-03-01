@@ -1,10 +1,11 @@
 /* Scrollbars */
 html ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 html ::-webkit-scrollbar-track {
   background-color: #f5f5fa;
-  border-left: 1px solid #e6e6eb;
+  border: 1px solid #e6e6eb;
   border-radius: 0;
   padding: 1px;
 }

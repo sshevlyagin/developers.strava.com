@@ -2,7 +2,7 @@
 date = "2016-02-14T16:11:58+05:30"
 title = "Strava API Reference"
 slug = "reference"
-styles = ["prettify.css","navbar-fixed-side.css","reference.css"]
+styles = ["prettify.css","reference.css"]
 scripts = ["prettify.js","marked.js","reference.js"]
 type = "reference"
 +++
@@ -13,9 +13,9 @@ type = "reference"
         {{#apiInfo}}
           {{#apis}}
             {{#operations}}
-              <li class="dropdown" data-group="{{baseName}}">
-                <a class="dropdown-toggle" href="#api-{{baseName}}">{{baseName}}</a>
-                <ul class="dropdown-menu">
+              <li data-group="{{baseName}}">
+                <a href="#api-{{baseName}}">{{baseName}}</a>
+                <ul>
                   {{#operation}}
                     <li data-group="{{baseName}}" data-name="{{nickname}}" class="">
                       <a href="#api-{{baseName}}-{{nickname}}">{{summary}}</a>
@@ -26,9 +26,9 @@ type = "reference"
             {{/operations}}
           {{/apis}}
         {{/apiInfo}}
-        <li class="dropdown" data-group="models">
-          <a class="dropdown-toggle" href="#api-models">All Models</a>
-          <ul class="dropdown-menu">
+        <li data-group="models">
+          <a href="#api-models">All Models</a>
+          <ul>
             {{#models}}
               {{#model}}
                 <li><a href="#api-models-{{name}}">{{name}}</a></li>
