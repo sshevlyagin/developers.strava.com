@@ -31,8 +31,8 @@ Here is an example request.
 	    "id": 1570175274,
 	    "external_id": "Lunch_Run.gpx",
 	    "error": null,
-	    "status": "Your activity is ready.",
-	    "activity_id": 1456449319
+	    "status": "Your activity is still being processed.",
+	    "activity_id": null
 	}
 
 If the file has been uploaded successfully, the response code will be `201 Created`.
