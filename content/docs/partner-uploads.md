@@ -35,7 +35,7 @@ Here is an example request.
 	    "activity_id": null
 	}
 
-If the file has been uploaded successfully, the response code will be `201 Created`.
+If the file was uploaded successfully, the response code will be `201 Created`.
 Strava then processes your file data to create an activity, which usually takes about 8 seconds.
 
 You can check the status of your upload to see when an activity has been created from your upload.
