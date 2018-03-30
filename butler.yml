@@ -1,0 +1,14 @@
+default:
+  skip: true
+  triggers:
+    refs/heads/master:
+      - publish
+
+publish:
+  notify:
+    - channel: '#api-team'
+      state: 'any'
+      ref: '*'
+  tasks:
+    publish:
+      - ./docker_publish prod
