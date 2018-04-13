@@ -377,5 +377,5 @@ You will receive a 204 No Content if the delete is successful. Otherwise, an err
 ###### Example Request
 
     $ curl -X DELETE https://api.strava.com/api/v3/push_subscriptions/12345 \
-        -d client_id=5 \
-        -d client_secret=7b2946535949ae70f015d696d8ac602830ece412
+        -F client_id=5 \
+        -F client_secret=7b2946535949ae70f015d696d8ac602830ece412
