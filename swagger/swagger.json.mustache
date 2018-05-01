@@ -502,7 +502,7 @@
       "put": {
         "operationId": "starSegment",
         "summary": "Star Segment",
-        "description": "Stars the given segment for the authenticated athlete.",
+        "description": "Stars/Unstars the given segment for the authenticated athlete.",
         "parameters": [
           {
             "name": "id",
@@ -511,6 +511,14 @@
             "required": true,
             "type": "integer",
             "format": "int64"
+          },
+          {
+            "name": "starred",
+            "in": "formData",
+            "description": "If true, star the segment; if false, unstar the segment.",
+            "type": "boolean",
+            "required": true,
+            "default": false
           }
         ],
         "tags": [
