@@ -15,10 +15,10 @@ To request access, email developers@strava.com with your client id, which you ca
 
 ## Event Data
 
-The Strava Webhook Events API supports webhook events for Strava activities.
+The Strava Webhook Events API supports webhook events for Strava activities, as well as app deauthorizations.
 
 When an event occurs that corresponds to a push subscription, a POST request will be made to the callback url defined in the subscription.
-The payload contains the `object_type` and `aspect_type` for the updated object as well as the `object_id`, which is the activity's ID.
+The payload contains the `object_type` and `aspect_type` of the updated object, as well as an object_id, which is either an activity or athlete ID.
 
 You should acknowledge the POST with a status code of 200 OK within two seconds.
 Events will be sent up to twice more if a 200 is not returned.
@@ -28,7 +28,7 @@ Your endpoint should additionally return a status code of 200 to acknowledge rec
 Additional information about the object is not included, and an application must decide how or if it wants to fetch updated data.
 For example, you may decide only to fetch new data for specific users, or after a certain number of activities have been uploaded.
 
-Webhook events are fired whenever an activity is created, deleted, or one of the following fields has been updated:
+Webhook events are fired when an athlete revokes access to an application, or whenever an activity is created, deleted, or one of the following activity fields have been updated:
 
 * Title
 * Type
@@ -46,7 +46,7 @@ These are the fields that are returned with webhook events:
       </span>
     </td>
     <td>
-        Always "activity."
+        Always either "activity" or "athlete."
     </td>
   </tr>
   <tr>
@@ -70,7 +70,8 @@ These are the fields that are returned with webhook events:
       </span>
     </td>
     <td>
-        For update events, keys can contain "title," "type," and "private," which is always "true" or "false." Empty for delete and create events.
+        For activity update events, keys can contain "title," "type," and "private," which is always "true" or "false."
+        For app deauthorization events, there is always an "authorized" : "false" key-value pair.
     </td>
   </tr>
   <tr>
