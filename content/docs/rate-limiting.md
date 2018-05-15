@@ -4,7 +4,7 @@ Strava API usage is limited on a per-application basis using both a 15-minute an
 The default rate limit allows 600 requests every 15 minutes, with up to 30,000 requests per day.
 This limit allows applications to make 40 requests per minute for about half the day.
 As an application grows, its rate limit may need to be adjusted.
-To request an adjustment, email api-rate-limits@strava.com.
+To request an adjustment, email [api@strava.com](mailto:api@strava.com?subject=Rate%20Limits) with the subject "Rate Limits".
 
 An application's 15-minute limit is reset at natural 15-minute intervals corresponding to 0, 15, 30 and 45 minutes after
 the hour. The daily limit resets at midnight UTC.

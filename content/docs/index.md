@@ -71,4 +71,4 @@ two comma separate values, short term followed by long term limit
 X-RateLimit-Usage	integer, integer
 two comma separate values, short term followed by long term usage
 
-As an application grows its rate limit may need to be reassessed. To request an adjustment contact api-rate-limits -at- strava.com.
+As an application grows its rate limit may need to be reassessed. To request an adjustment, email [api@strava.com](mailto:api@strava.com?subject=Rate%20Limits) with the subject "Rate Limits".
