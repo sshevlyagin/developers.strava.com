@@ -51,6 +51,18 @@ These are the fields that are returned with webhook events:
   </tr>
   <tr>
     <td width="200px">
+      <span class="parameter-name">object_id</span>
+      <br>
+      <span class="parameter-description">
+        integer
+      </span>
+    </td>
+    <td>
+        For activity events, the activity's ID. For athlete events, the athlete's ID.
+    </td>
+  </tr>
+  <tr>
+    <td width="200px">
       <span class="parameter-name">aspect_type</span>
       <br>
       <span class="parameter-description">
@@ -83,7 +95,7 @@ These are the fields that are returned with webhook events:
       </span>
     </td>
     <td>
-        The activity owner's athlete ID.
+        The athlete's ID.
     </td>
   </tr>
   <tr>
