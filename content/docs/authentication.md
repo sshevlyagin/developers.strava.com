@@ -12,9 +12,9 @@ All developers need to register their application before getting started. A regi
 
 Strava provides an authorization mechanism that is an implementation of OAuth 2.0 [3-legged flow](http://oauthbible.com/#oauth-2-three-legged).
 
-In this flow, the user is prompted by the application to log in on the Strava website and to give consent to the requesting application.
+In this flow, the user is prompted by the application to log in on the Strava website and to give consent to the requesting application. The user also has the choice to opt out of `write` and `view_private` scopes (explained below) if they are requested by an application..
 
-If the user authorizes the application, the Strava website will issue a redirect response to a URL of the application's choosing. This URL will include an authorization code. Using this code, the application must complete the process by exchanging the code for an access token.
+If the user authorizes the application, the Strava website will issue a redirect response to a URL of the application's choosing. This URL will include an authorization code and the scope accepted by the athlete. Using this code, the application must complete the process by exchanging the code for an access token.
 
 This is done by presenting a `client_id` and `client_secret` (obtained during application registration), along with the authorization code, to Strava. Upon success, an access token will be returned that can be used to access the API on behalf of the user.
 
@@ -111,7 +111,7 @@ To initiate the flow, redirect the user to Strava’s authorization page, `GET h
 
 Strava will respond to the authorization request by redirecting the user agent to the `redirect_uri` provided.
 
-On success, a `code` parameter will be included in the query string. If access is denied, `error=access_denied` will be included in the query string. In both cases, if provided, the `state` parameter will also be included.
+On success, `code` and `scope` parameters will be included in the query string. If access is denied, `error=access_denied` will be included in the query string. In both cases, if provided, the `state` parameter will also be included.
 
 If the user accepts the request to share access to their Strava data, Strava will redirect back to `redirect_uri` with the authorization code. The application must now exchange the temporary authorization code for an access token, using its client ID and client secret. The endpoint is `POST https://www.strava.com/oauth/token`.
 
