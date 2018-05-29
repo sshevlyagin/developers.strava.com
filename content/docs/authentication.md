@@ -18,7 +18,9 @@ If the user authorizes the application, the Strava website will issue a redirect
 
 This is done by presenting a `client_id` and `client_secret` (obtained during application registration), along with the authorization code, to Strava. Upon success, an access token will be returned that can be used to access the API on behalf of the user.
 
-The access token represents the granting of access of a user to an application. Users can revoke access by deleting the token for a given application on their settings page.
+The access token represents the granting of access of a user to an application. Users can revoke access by deleting the token for a given application on their [settings](https://www.strava.com/settings/apps) page.
+
+If you are using a mobile webview, be aware that Google Sign-in will not work. See [Google’s blog post](https://developers.googleblog.com/2016/08/modernizing-oauth-interactions-in-native-apps.html) for further information and ways to work around that limitation.
 
 ## Request access
 

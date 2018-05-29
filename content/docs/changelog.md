@@ -5,6 +5,9 @@ The Strava mobile applications and 3rd party applications use the V3 API to comm
 ###### May 25, 2018
 + `GET https://www.strava.com/oauth/authorize` returns the scope of the eventual token in the response.
 
+###### May 18, 2018
++ Add the [deauthorization webhook events](../webhooks).
+
 ###### January 17, 2018
 + Athlete-specific data requires authentication.
 
