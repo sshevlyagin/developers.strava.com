@@ -111,13 +111,13 @@ The Strava mobile applications and 3rd party applications use the V3 API to comm
 + Add `private` to [club summary](../reference/#api-models-SummaryClub) endpoint.
 
 ###### June 9, 2016
-+ Add vanity `url` to [club detail](../reference/#api-models-DetailedClub)) and [club summary](../reference/#api-models-SummaryClub) endpoints. 
++ Add vanity `url` to [club detail](../reference/#api-models-DetailedClub) and [club summary](../reference/#api-models-SummaryClub) endpoints.
 
 ###### June 2, 2016
 + Add new [athlete zones](../reference/#api-Athletes-getLoggedInAthleteZones) endpoint to display heart rate zones.
 
 ###### May 13, 2016
-+ Add club `admin` and `owner` statuses to [club detail](../reference/#api-models-DetailedClub)) endpoint.
++ Add club `admin` and `owner` statuses to [club detail](../reference/#api-models-DetailedClub) endpoint.
 
 ###### May 9, 2016
 + Add `following_count` to [club detail](../reference/#api-models-DetailedClub) endpoint.
@@ -132,7 +132,7 @@ The Strava mobile applications and 3rd party applications use the V3 API to comm
 + Update [club join](../reference/#api-Clubs-joinClubById) for `private` clubs.
 
 ###### April 21, 2016
-+ Add device name to [activity detail](../reference/#api-models-DetailedActivity)) endpoint.
++ Add device name to [activity detail](../reference/#api-models-DetailedActivity) endpoint.
 
 ###### April 20, 2016
 + Add club `membership` status to [club detail](../reference/#api-models-DetailedClub) endpoint.
@@ -156,7 +156,7 @@ The Strava mobile applications and 3rd party applications use the V3 API to comm
 + Move activity location attribute deprecation to December 18, 2016.
 
 ###### December 3, 2015
-+ Include `suffer_score` in [activity summary](../reference/#api-models-SummaryActivity)) endpoint.
++ Include `suffer_score` in [activity summary](../reference/#api-models-SummaryActivity) endpoint.
 
 ###### November 23, 2015
 + Deprecate activity location attributes.
@@ -165,7 +165,7 @@ The Strava mobile applications and 3rd party applications use the V3 API to comm
 + Add embed token to [activity detail](../reference/#api-models-DetailedActivity) endpoint.
 
 ###### September 25, 2015
-+ Remove `CrossCountrySkiing` from list of valid activity types on [activity summary](../reference/#api-models-SummaryActivity) and [activity detail](../reference/#api-models-DetailedActivity)) endpoints. 
++ Remove `CrossCountrySkiing` from list of valid activity types on [activity summary](../reference/#api-models-SummaryActivity) and [activity detail](../reference/#api-models-DetailedActivity) endpoints.
 
 ###### September 25, 2015
 + Add `hazardous` attribute to [segment summary](../reference/#api-models-SummarySegment).
@@ -258,7 +258,7 @@ The Strava mobile applications and 3rd party applications use the V3 API to comm
 + Add [segment leaderboard](../reference/#api-Segments-getLeaderboardBySegmentId) pagination.
 
 ###### January 12, 2014
-+ Add `location_country` to [athlete](../reference/#api-models-SummaryAthlete)), [activity](../reference/#api-models-SummaryActivity)), [segment](../reference/#api-models-SummarySegment)) and [club](../reference/#api-models-SummaryClub)) summary endpoints.
++ Add `location_country` to [athlete](../reference/#api-models-SummaryAthlete), [activity](../reference/#api-models-SummaryActivity), [segment](../reference/#api-models-SummarySegment) and [club](../reference/#api-models-SummaryClub) summary endpoints.
 
 ###### January 8, 2014
 + Remove `gear` object from [activity summary](../reference/#api-models-SummaryActivity), provide `gear_id` instead.
