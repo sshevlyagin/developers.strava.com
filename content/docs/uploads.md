@@ -161,9 +161,9 @@ Device type is detected in all file types from standard ‘creator’ tags. Thes
 A generic “with barometer” device is provided to force the system to use the elevation data from TCX and GPX file types. One only needs to add “with barometer” to the end of the creator name. For example, a TCX file would include something like:
 <pre>
     <code>
-        `<Creator>
+        <Creator>
             <Name>My Awesome Device with barometer</Name>
-         </Creator>`
+         </Creator>
     </code>
 </pre>
 
@@ -171,7 +171,7 @@ and a GPX file should have an updated creator like:
 
 <pre>
     <code> 
-        `< gpx version="1.1" creator="Best app ever with Barometer"/>` 
+        <gpx version="1.1" creator="Best app ever with Barometer"/>
     </code>
 </pre>
 
