@@ -831,12 +831,12 @@
       "get": {
         "operationId": "exploreSegments",
         "summary": "Explore segments",
-        "description": "Returns the segments matching a specified query.",
+        "description": "Returns the top 10 segments matching a specified query.",
         "parameters": [
           {
             "name": "bounds",
             "in": "query",
-            "description": "The geographical boundaries of the search.",
+            "description": "The latitude and longitude for two points describing a rectangular boundary for the search: [southwest corner latitutde, southwest corner longitude, northeast corner latitude, northeast corner longitude]",
             "required": true,
             "type": "array",
             "items": {
