@@ -85,28 +85,26 @@ Here is an example request.
 If the activity is created successfully, the response code will be `201 Created` and the response will contain a `"photo_metadata"` field with a `"uri"` which contains the URL to upload a photo in step 2.
 
 ###### Example Response
-	{
-	    "id": 12345678987654321,
-	    "resource_state": 3,
-	    "external_id": null,
-	    "upload_id": null,
-	    "athlete": {
-	      "id": 12345678987654321,
-	      "resource_state": 1
-	    },
-	    "photo_metadata": {
-	      [
-	        {
-	          "uri": "https://strava-photo-uploads-prod.s3.amazonaws.com/snsU&AWSAccessKeyId=ZOI&Expires=1521148201&Signature=LEHffm%3D",
-	          "header": {
-	              "Content-Type": "image/jpeg"
-	          },
-	          "method": "PUT",
-	          "max_size": 1600
-	        }
-	      ]
-	    }
-	}
+  {
+    "id": 12345678987654321,
+    "resource_state": 3,
+    "external_id": null,
+    "upload_id": null,
+    "athlete": {
+      "id": 12345678987654321,
+      "resource_state": 1
+    },
+    "photo_metadata": [
+      {
+        "uri": "https://strava-photo-uploads-prod.s3.amazonaws.com/snsU&AWSAccessKeyId=ZOI&Expires=1521148201&Signature=LEHffm%3D",
+        "header": {
+          "Content-Type": "image/jpeg"
+        },
+        "method": "PUT",
+        "max_size": 1600
+      }
+    ]
+  }
 
 You should now be able to see your activity at www.strava.com/activities/{id}, where {id} is the `id` field that was returned in the API response.
 
