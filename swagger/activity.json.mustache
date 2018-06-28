@@ -204,6 +204,28 @@
           "has_kudoed": {
             "type": "boolean",
             "description": "Whether the logged-in athlete has kudoed this activity"
+          },
+          "kilojoules": {
+            "type": "number",
+            "format": "float",
+            "description": "The total work done in kilojoules during this activity. Rides only"
+          },
+          "average_watts": {
+            "type": "number",
+            "format": "float",
+            "description": "Average power output in watts during this activity. Rides only"
+          },
+          "device_watts": {
+            "type": "boolean",
+            "description": "Whether the watts are from a power meter, false if estimated"
+          },
+          "max_watts": {
+            "type": "integer",
+            "description": "Rides with power meter data only"
+          },
+          "weighted_average_watts": {
+            "type": "integer",
+            "description": "Similar to Normalized Power. Rides with power meter data only"
           }
         }
       }
